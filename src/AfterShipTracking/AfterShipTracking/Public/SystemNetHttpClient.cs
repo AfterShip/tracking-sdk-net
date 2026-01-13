@@ -12,6 +12,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace AfterShipTracking
 {
@@ -51,7 +52,7 @@ namespace AfterShipTracking
 
         static SystemNetHttpClient()
         {
-            // Enable support for TLS 1.2, as Tracking's API requires it. This should only be
+            // Enable support for TLS 1.2, as AfterShip's API requires it. This should only be
             // necessary for .NET Framework 4.5 as more recent runtimes should have TLS 1.2 enabled
             // by default, but it can be disabled in some environments.
             ServicePointManager.SecurityProtocol = ServicePointManager.SecurityProtocol |
@@ -81,7 +82,7 @@ namespace AfterShipTracking
         {
             if (string.IsNullOrEmpty(baseUrl))
             {
-                throw ErrorCode.GenSDKError(ErrorCode.INVALID_REQUEST, "Base url empty");
+                throw ErrorCode.GenSDKError(ErrorCode.BAD_REQUEST, "Base url empty");
             }
 
             this.baseUrl = baseUrl;
@@ -206,7 +207,7 @@ namespace AfterShipTracking
                 requestException = null;
                  if (retry > this.MaxNetworkRetries)
                 {
-                    requestException = ErrorCode.GenSDKError(ErrorCode.TIMED_OUT, ErrorCode.TIMED_OUT);
+                    requestException = ErrorCode.GenSDKError(ErrorCode.TIMED_OUT, "Request timed out.");
                     break;
                 }
                 var httpRequest = this.BuildRequestMessage(request);
@@ -214,7 +215,7 @@ namespace AfterShipTracking
                 var stopwatch = Stopwatch.StartNew();
                 // if (this.IsRateOverflow())
                 // {
-                //     throw ErrorCode.GenSDKError(ErrorCode.RATE_LIMIT_EXCEEDED, ErrorCode.RATE_LIMIT_EXCEEDED);
+                //     throw ErrorCode.GenSDKError(ErrorCode.RATE_LIMIT_EXCEED, "You have exceeded the API call rate limit. The default limit is 10 requests per second.");
                 // }
                 try
                 {
@@ -223,11 +224,11 @@ namespace AfterShipTracking
                 }
                 catch (HttpRequestException)
                 {
-                    requestException = ErrorCode.GenSDKError(ErrorCode.INTERNAL_ERROR, ErrorCode.INTERNAL_ERROR); ;
+                    requestException = ErrorCode.GenSDKError(ErrorCode.UNKNOWN_ERROR, "Something went wrong on AfterShip's end.");
                 }
                 catch (OperationCanceledException)
                 {
-                    requestException = ErrorCode.GenSDKError(ErrorCode.TIMED_OUT,ErrorCode.TIMED_OUT);
+                    requestException = ErrorCode.GenSDKError(ErrorCode.TIMED_OUT, "Request timed out.");
                 }
 
                 stopwatch.Stop();
@@ -291,7 +292,7 @@ namespace AfterShipTracking
             // query
             if (request.QueryParams != null && request.QueryParams.Count > 0)
             {
-                url += "?" + string.Join("&", request.QueryParams.Select(p => $"{p.Key}={p.Value}"));
+                url += "?" + string.Join("&", request.QueryParams.Select(p => $"{p.Key}={HttpUtility.UrlEncode(p.Value)}"));
             }
 
 

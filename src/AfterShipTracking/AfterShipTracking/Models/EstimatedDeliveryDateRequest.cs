@@ -21,180 +21,39 @@ namespace AfterShipTracking
         /// <summary>
         ///  ServiceTypeName AfterShip’s unique code represents carrier’s shipping and delivery options. Refer to .
         /// </summary>
-        [JsonProperty("service_type_name",NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("service_type_name")]
         public string?  ServiceTypeName { get; set; }
         /// <summary>
         ///  OriginAddress The location from where the package is picked up by the carrier to be delivered to the final destination.
         /// </summary>
         [JsonProperty("origin_address")]
-        public OriginAddressEstimatedDeliveryDateRequest  OriginAddress { get; set; }
+        public EstimatedDeliveryDateRequestOriginAddress  OriginAddress { get; set; }
         /// <summary>
         ///  DestinationAddress The final destination of the customer where the delivery will be made.
         /// </summary>
         [JsonProperty("destination_address")]
-        public DestinationAddressEstimatedDeliveryDateRequest  DestinationAddress { get; set; }
+        public EstimatedDeliveryDateRequestDestinationAddress  DestinationAddress { get; set; }
         /// <summary>
         ///  Weight AfterShip uses this object to calculate the total weight of the order.
         /// </summary>
-        [JsonProperty("weight",NullValueHandling = NullValueHandling.Ignore)]
-        public WeightEstimatedDeliveryDateRequest?  Weight { get; set; }
+        [JsonProperty("weight")]
+        public EstimatedDeliveryDateRequestWeight?  Weight { get; set; }
         /// <summary>
         ///  PackageCount The number of packages.
         /// </summary>
-        [JsonProperty("package_count",NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("package_count")]
         public int?  PackageCount { get; set; }
         /// <summary>
-        ///  PickupTime The local pickup time in the origin address time zone of the package.Either `pickup_time` or `estimated_pickup` is required.
+        ///  PickupTime The local pickup time in the origin address time zone of the package.</br><span style=color:#ff6b2b;padding:2px>**Either `pickup_time` or `estimated_pickup` is required.**</span>
         /// </summary>
-        [JsonProperty("pickup_time",NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("pickup_time")]
         public string?  PickupTime { get; set; }
         /// <summary>
-        ///  EstimatedPickup The local pickup time of the package.Either `pickup_time` or `estimated_pickup` is required.
+        ///  EstimatedPickup The local pickup time of the package.</br><span style=color:#ff6b2b;padding:2px>**Either `pickup_time` or `estimated_pickup` is required.**</span>
         /// </summary>
-        [JsonProperty("estimated_pickup",NullValueHandling = NullValueHandling.Ignore)]
-        public EstimatedPickupEstimatedDeliveryDateRequest?  EstimatedPickup { get; set; }
+        [JsonProperty("estimated_pickup")]
+        public EstimatedDeliveryDateRequestEstimatedPickup?  EstimatedPickup { get; set; }
         public EstimatedDeliveryDateRequest()
-        {
-        }
-    }
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    public class  OriginAddressEstimatedDeliveryDateRequest
-    {
-        /// <summary>
-        ///  CountryRegion The country/region of the origin location from where the package is picked up by the carrier to be delivered to the final destination. Use 3 letters of ISO 3166-1 country/region code.
-        /// </summary>
-        [JsonProperty("country_region")]
-        public string  CountryRegion { get; set; }
-        /// <summary>
-        ///  State State, province, or the equivalent location of the origin address. Use 3 letters of ISO 3166-1 country/region code for countries/regions without state. Either `origin_address.state` or `origin_address.postal_code` is required.
-        /// </summary>
-        [JsonProperty("state",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  State { get; set; }
-        /// <summary>
-        ///  City City of the origin address. Use 3 letters of ISO 3166-1 country/region code for countries/regions without City.
-        /// </summary>
-        [JsonProperty("city",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  City { get; set; }
-        /// <summary>
-        ///  PostalCode Postal code of the origin address. Use 3 letters of ISO 3166-1 country/region code for countries/regions without postal code. Either `origin_address.state` or `origin_address.postal_code` is required.
-        /// </summary>
-        [JsonProperty("postal_code",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  PostalCode { get; set; }
-        /// <summary>
-        ///  RawLocation Raw location of the origin address. A raw address will help AI to identify the accurate location of the origin address.
-        /// </summary>
-        [JsonProperty("raw_location",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  RawLocation { get; set; }
-
-        public OriginAddressEstimatedDeliveryDateRequest()
-        {
-        }
-    }
-    /// <summary>
-    /// 
-    /// </summary>
-    public class  DestinationAddressEstimatedDeliveryDateRequest
-    {
-        /// <summary>
-        ///  CountryRegion The country/region of the destination location where the package will be delivered. Use 3 letters of ISO 3166-1 country code.
-        /// </summary>
-        [JsonProperty("country_region")]
-        public string  CountryRegion { get; set; }
-        /// <summary>
-        ///  State State, province, or the equivalent location of the destination address where the package will be delivered.Either `destination_address.state` or `destination_address.postal_code` is required.
-        /// </summary>
-        [JsonProperty("state",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  State { get; set; }
-        /// <summary>
-        ///  City City of the destination address where the package will be delivered.
-        /// </summary>
-        [JsonProperty("city",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  City { get; set; }
-        /// <summary>
-        ///  PostalCode Postal code of the destination address.Either `destination_address.state` or `destination_address.postal_code` is required.
-        /// </summary>
-        [JsonProperty("postal_code",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  PostalCode { get; set; }
-        /// <summary>
-        ///  RawLocation Raw location of the destination address. A raw address will help AI to identify the accurate location of the destination address.
-        /// </summary>
-        [JsonProperty("raw_location",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  RawLocation { get; set; }
-
-        public DestinationAddressEstimatedDeliveryDateRequest()
-        {
-        }
-    }
-    /// <summary>
-    /// 
-    /// </summary>
-    public class  WeightEstimatedDeliveryDateRequest
-    {
-        /// <summary>
-        ///  Unit The weight unit of the package. 
-        /// </summary>
-        [JsonProperty("unit")]
-        public string  Unit { get; set; }
-        /// <summary>
-        ///  Value The weight of the shipment.
-        /// </summary>
-        [JsonProperty("value")]
-        public double  Value { get; set; }
-
-        public WeightEstimatedDeliveryDateRequest()
-        {
-        }
-    }
-    /// <summary>
-    /// 
-    /// </summary>
-    public class  EstimatedPickupEstimatedDeliveryDateRequest
-    {
-        /// <summary>
-        ///  OrderTime The local order time in the origin address time zone of the package.
-        /// </summary>
-        [JsonProperty("order_time")]
-        public string  OrderTime { get; set; }
-        /// <summary>
-        ///  OrderCutoffTime Order cut off time in the origin address time zone. The default value set by AfterShip is 18:00:00.
-        /// </summary>
-        [JsonProperty("order_cutoff_time",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  OrderCutoffTime { get; set; }
-        /// <summary>
-        ///  BusinessDays Operating days in a week. Number refers to the weekday.E.g., [1,2,3,4,5] means operating days are from Monday to Friday.AfterShip will set [1,2,3,4,5] as the default value.
-        /// </summary>
-        [JsonProperty("business_days",NullValueHandling = NullValueHandling.Ignore)]
-        public int? [] BusinessDays { get; set; }
-        /// <summary>
-        ///  OrderProcessingTime 
-        /// </summary>
-        [JsonProperty("order_processing_time",NullValueHandling = NullValueHandling.Ignore)]
-        public OrderProcessingTimeEstimatedPickupEstimatedDeliveryDateRequest?  OrderProcessingTime { get; set; }
-
-        public EstimatedPickupEstimatedDeliveryDateRequest()
-        {
-        }
-    }
-    /// <summary>
-    /// 
-    /// </summary>
-    public class  OrderProcessingTimeEstimatedPickupEstimatedDeliveryDateRequest
-    {
-        /// <summary>
-        ///  Unit Processing time of an order, from being placed to being picked up. Only support day as value now.AfterShip will set day as the default value.
-        /// </summary>
-        [JsonProperty("unit",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  Unit { get; set; }
-        /// <summary>
-        ///  Value Processing time of an order, from being placed to being picked up.AfterShip will set 0 as the default value.
-        /// </summary>
-        [JsonProperty("value",NullValueHandling = NullValueHandling.Ignore)]
-        public double?  Value { get; set; }
-
-        public OrderProcessingTimeEstimatedPickupEstimatedDeliveryDateRequest()
         {
         }
     }

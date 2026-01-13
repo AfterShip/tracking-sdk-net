@@ -13,7 +13,8 @@ namespace AfterShipTracking
         private static JsonSerializerSettings settings = new JsonSerializerSettings
         {
             DateParseHandling = DateParseHandling.None,
-            DateTimeZoneHandling = DateTimeZoneHandling.RoundtripKind
+            DateTimeZoneHandling = DateTimeZoneHandling.RoundtripKind,
+            NullValueHandling = NullValueHandling.Ignore
         };
 
         public static T ProcessResponse<T>(Response response)
@@ -30,7 +31,7 @@ namespace AfterShipTracking
             }
             catch (Newtonsoft.Json.JsonException)
             {
-                throw ErrorCode.GenSDKError(ErrorCode.INVALID_JSON, "Invalid response content:" + response.Content);
+                throw ErrorCode.GenSDKError(ErrorCode.UNKNOWN_ERROR, "Something went wrong on AfterShip's end.");
             }
 
             return obj;
@@ -51,7 +52,7 @@ namespace AfterShipTracking
             }
             catch (Newtonsoft.Json.JsonException)
             {
-                throw ErrorCode.GenSDKError(ErrorCode.INVALID_JSON, "Invalid response content:" + response.Content);
+                throw ErrorCode.GenSDKError(ErrorCode.UNKNOWN_ERROR, "Something went wrong on AfterShip's end.");
             }
 
             return obj;
@@ -72,7 +73,7 @@ namespace AfterShipTracking
             }
             catch (Newtonsoft.Json.JsonException)
             {
-                throw ErrorCode.GenSDKError(ErrorCode.INVALID_JSON, "Invalid response content:" + response.Content);
+                throw ErrorCode.GenSDKError(ErrorCode.UNKNOWN_ERROR, "Something went wrong on AfterShip's end.");
             }
 
             return obj;
@@ -87,13 +88,13 @@ namespace AfterShipTracking
             }
             catch (Newtonsoft.Json.JsonException)
             {
-                return ErrorCode.GenSDKError(ErrorCode.INVALID_JSON, "Invalid response content:" + response.Content);
+                throw ErrorCode.GenSDKError(ErrorCode.UNKNOWN_ERROR, "Something went wrong on AfterShip's end.");
             }
 
             var meta = jObject["meta"];
             if (meta == null)
             {
-                return ErrorCode.GenSDKError(ErrorCode.INVALID_JSON, "Invalid response content:" + response.Content);
+                throw ErrorCode.GenSDKError(ErrorCode.UNKNOWN_ERROR, "Something went wrong on AfterShip's end.");
             }
 
             int.TryParse(meta["code"]?.ToString(), out int code);
@@ -107,9 +108,9 @@ namespace AfterShipTracking
             {
                 return JsonConvert.SerializeObject(model, settings);
             }
-            catch (JsonException e)
+            catch (JsonException)
             {
-                throw ErrorCode.GenSDKError(ErrorCode.INVALID_JSON, e.Message);
+                throw ErrorCode.GenSDKError(ErrorCode.UNKNOWN_ERROR, "Something went wrong on AfterShip's end.");
             }
         }
 
@@ -119,9 +120,9 @@ namespace AfterShipTracking
             {
                 return JsonConvert.DeserializeObject<T>(value,settings);
             }
-            catch (JsonException e)
+            catch (JsonException)
             {
-                throw ErrorCode.GenSDKError(ErrorCode.INVALID_JSON, e.Message);
+                throw ErrorCode.GenSDKError(ErrorCode.UNKNOWN_ERROR, "Something went wrong on AfterShip's end.");
             }
         }
     }

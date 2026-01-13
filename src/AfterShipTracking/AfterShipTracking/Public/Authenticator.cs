@@ -61,9 +61,9 @@ namespace AfterShipTracking
                 {
                     rs = CanonicalResource(request);
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    throw ErrorCode.GenSDKError(ErrorCode.INVALID_REQUEST, e.Message);
+                    throw ErrorCode.GenSDKError(ErrorCode.BAD_REQUEST, "Invalid request");
                 }
 
                 byte[] bodyBytes;
@@ -89,9 +89,9 @@ namespace AfterShipTracking
                     {
                         rsaSign = Encryption.RsaPssSha256Encrypt(s, this.ApiSecret);
                     }
-                    catch (Exception e)
+                    catch (Exception)
                     {
-                        throw ErrorCode.GenSDKError(ErrorCode.INVALID_API_KEY, e.Message);
+                        throw ErrorCode.GenSDKError(ErrorCode.INVALID_API_KEY, "Invalid API key");
                     }
 
                     tmpHeaders.TryAddWithoutValidation("as-signature-rsa-sha256", rsaSign);
@@ -142,7 +142,7 @@ namespace AfterShipTracking
 
             if (sortedParams.Count > 0)
             {
-                canonicalizedResource += "?" + string.Join("&", sortedParams.Select(p => $"{p.Key}={p.Value}"));
+                canonicalizedResource += "?" + string.Join("&", sortedParams.Select(p => $"{p.Key}={HttpUtility.UrlEncode(p.Value)}"));
             }
 
 

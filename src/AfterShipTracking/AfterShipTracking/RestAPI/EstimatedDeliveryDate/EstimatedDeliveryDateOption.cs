@@ -17,7 +17,7 @@ namespace AfterShipTracking
         }
 
 
-        public PredictRequest PredictRequest { get; set; }
+        public EstimatedDeliveryDateRequest PredictRequest { get; set; }
 
         override public string GetBody()
         {

@@ -4,67 +4,15 @@
  */
 using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using Headers = System.Net.Http.Headers.HttpResponseHeaders;
 
 namespace AfterShipTracking
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public class  GetCourierConnectionsResponse
     {
-        /// <summary>
-        ///  Pagination 
-        /// </summary>
-        [JsonProperty("pagination")]
-        public PaginationGetCourierConnectionsResponse?  Pagination { get; set; }
-        /// <summary>
-        ///  CourierConnections 
-        /// </summary>
-        [JsonProperty("courier_connections")]
-        public CourierConnection? [] CourierConnections { get; set; }
-        /// <summary>
-        ///  Count 
-        /// </summary>
-        [JsonProperty("total")]
-        public int?  Count { get; set; }
-        /// <summary>
-        ///  Page 
-        /// </summary>
-        [JsonProperty("page")]
-        public int?  Page { get; set; }
-        /// <summary>
-        ///  Limit 
-        /// </summary>
-        [JsonProperty("limit")]
-        public int?  Limit { get; set; }
+        public Headers ResponseHeader { get; set; }
+        public GetCourierConnectionsResponseData Data { get; set; }
         public GetCourierConnectionsResponse()
-        {
-        }
-    }
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    public class  PaginationGetCourierConnectionsResponse
-    {
-        /// <summary>
-        ///  Total The total number of courier connections.
-        /// </summary>
-        [JsonProperty("total")]
-        public int?  Total { get; set; }
-        /// <summary>
-        ///  NextCursor A string representing the cursor value for the next page of results.
-        /// </summary>
-        [JsonProperty("next_cursor")]
-        public string?  NextCursor { get; set; }
-        /// <summary>
-        ///  HasNextPage To indicate if next page is available.
-        /// </summary>
-        [JsonProperty("has_next_page")]
-        public bool?  HasNextPage { get; set; }
-
-        public PaginationGetCourierConnectionsResponse()
         {
         }
     }

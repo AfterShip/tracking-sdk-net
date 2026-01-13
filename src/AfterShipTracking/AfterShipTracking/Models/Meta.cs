@@ -21,16 +21,15 @@ namespace AfterShipTracking
         /// <summary>
         ///  Message error message, only exist if the response status is not 2xx
         /// </summary>
-        [JsonProperty("message",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  Message { get; set; }
+        [JsonProperty("message")]
+        public string  Message { get; set; }
         /// <summary>
         ///  Type error type, only exist if the response status is not 2xx
         /// </summary>
-        [JsonProperty("type",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  Type { get; set; }
+        [JsonProperty("type")]
+        public MetaType?  Type { get; set; }
         public Meta()
         {
         }
     }
-    
 }

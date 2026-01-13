@@ -18,7 +18,7 @@ namespace AfterShipTracking
 
         public GetCouriersResponse GetCouriers( GetCouriersOptions? options = null)
         {
-            string path = $"/tracking/2025-07/couriers";
+            string path = $"/tracking/2026-01/couriers";
             Request request = new Request(
                 HttpMethod.Get,
                 path,
@@ -26,11 +26,17 @@ namespace AfterShipTracking
             );
 
             var response = this.HttpClient.MakeRequest(request);
-            return ProcessData<GetCouriersResponse>(response);
+            GetCouriersResponseData responseData = ProcessData<GetCouriersResponseData>(response);
+
+            GetCouriersResponse result = new GetCouriersResponse();
+            result.ResponseHeader = response.Headers;
+            result.Data = responseData;
+
+            return result;
         }
         public DetectCourierResponse DetectCourier( DetectCourierOptions? options = null)
         {
-            string path = $"/tracking/2025-07/couriers/detect";
+            string path = $"/tracking/2026-01/couriers/detect";
             Request request = new Request(
                 HttpMethod.Post,
                 path,
@@ -38,7 +44,13 @@ namespace AfterShipTracking
             );
 
             var response = this.HttpClient.MakeRequest(request);
-            return ProcessData<DetectCourierResponse>(response);
+            DetectCourierResponseData responseData = ProcessData<DetectCourierResponseData>(response);
+
+            DetectCourierResponse result = new DetectCourierResponse();
+            result.ResponseHeader = response.Headers;
+            result.Data = responseData;
+
+            return result;
         }
     }
 }

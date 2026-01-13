@@ -17,17 +17,17 @@ namespace AfterShipTracking
         [EnumMember(Value = "Pending")]
         Pending,
         [EnumMember(Value = "InfoReceived")]
-        Inforeceived,
+        InfoReceived,
         [EnumMember(Value = "InTransit")]
-        Intransit,
+        InTransit,
         [EnumMember(Value = "OutForDelivery")]
-        Outfordelivery,
+        OutForDelivery,
         [EnumMember(Value = "AttemptFail")]
-        Attemptfail,
+        AttemptFail,
         [EnumMember(Value = "Delivered")]
         Delivered,
         [EnumMember(Value = "AvailableForPickup")]
-        Availableforpickup,
+        AvailableForPickup,
         [EnumMember(Value = "Exception")]
         Exception,
         [EnumMember(Value = "Expired")]

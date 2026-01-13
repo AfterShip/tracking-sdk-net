@@ -16,14 +16,18 @@ namespace AfterShipTracking
         {
         }
 
-        public string Active { get; set; }
-        public string Slug { get; set; }
+        public bool? Active { get; set; }
+        public string? Slug { get; set; }
 
         override public List<KeyValuePair<string, string>> GetQueryParams()
         {
             var p = new List<KeyValuePair<string, string>>();
-            p.Add(new KeyValuePair<string, string>("active", Active));
-            p.Add(new KeyValuePair<string, string>("slug", Slug));
+            if (Active != null) {
+                p.Add(new KeyValuePair<string, string>("active", Active.ToString().ToLower()));
+            }
+            if (Slug != null) {
+                p.Add(new KeyValuePair<string, string>("slug", Slug));
+            }
             return p;
         }
     }

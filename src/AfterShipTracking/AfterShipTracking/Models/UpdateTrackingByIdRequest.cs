@@ -16,190 +16,154 @@ namespace AfterShipTracking
         /// <summary>
         ///  Title By default this field shows the `tracking_number`, but you can customize it as you wish with any info (e.g. the order number).
         /// </summary>
-        [JsonProperty("title",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  Title { get; set; }
+        [JsonProperty("title")]
+        public string  Title { get; set; }
         /// <summary>
         ///  OrderId A globally-unique identifier for the order.
         /// </summary>
-        [JsonProperty("order_id",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  OrderId { get; set; }
+        [JsonProperty("order_id")]
+        public string  OrderId { get; set; }
         /// <summary>
         ///  OrderIdPath The URL for the order in your system or store.
         /// </summary>
-        [JsonProperty("order_id_path",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  OrderIdPath { get; set; }
+        [JsonProperty("order_id_path")]
+        public string  OrderIdPath { get; set; }
         /// <summary>
         ///  CustomFields Custom fields that accept an object with string field. In order to protect the privacy of your customers, do not include any 
         /// </summary>
-        [JsonProperty("custom_fields",NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, string>?  CustomFields { get; set; }
+        [JsonProperty("custom_fields")]
+        public Dictionary<string, string>  CustomFields { get; set; }
         /// <summary>
         ///  Note Text field for the note.Input `""` to clear the value of this field.
         /// </summary>
-        [JsonProperty("note",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  Note { get; set; }
+        [JsonProperty("note")]
+        public string  Note { get; set; }
         /// <summary>
         ///  Language The recipient’s language. If you set up AfterShip notifications in different languages, we use this to send the recipient tracking updates in their preferred language. Use an  to specify the language.
         /// </summary>
-        [JsonProperty("language",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  Language { get; set; }
+        [JsonProperty("language")]
+        public string  Language { get; set; }
         /// <summary>
-        ///  OrderPromisedDeliveryDate The promised delivery date of the order. It uses the formats:- YYYY-MM-DD- YYYY-MM-DDTHH:mm:ss- YYYY-MM-DDTHH:mm:ssZ
+        ///  OrderPromisedDeliveryDate The promised delivery date of the order in shipment recipient’s timezone.
         /// </summary>
-        [JsonProperty("order_promised_delivery_date",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  OrderPromisedDeliveryDate { get; set; }
+        [JsonProperty("order_promised_delivery_date")]
+        public UpdateTrackingByIdRequestOrderPromisedDeliveryDate  OrderPromisedDeliveryDate { get; set; }
         /// <summary>
         ///  DeliveryType Shipment delivery type- `pickup_at_store`- `pickup_at_courier`- `door_to_door`
         /// </summary>
-        [JsonProperty("delivery_type",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  DeliveryType { get; set; }
+        [JsonProperty("delivery_type")]
+        public UpdateTrackingByIdRequestDeliveryType?  DeliveryType { get; set; }
         /// <summary>
         ///  PickupLocation Shipment pickup location for receiver
         /// </summary>
-        [JsonProperty("pickup_location",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  PickupLocation { get; set; }
+        [JsonProperty("pickup_location")]
+        public string  PickupLocation { get; set; }
         /// <summary>
         ///  PickupNote Shipment pickup note for receiver
         /// </summary>
-        [JsonProperty("pickup_note",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  PickupNote { get; set; }
+        [JsonProperty("pickup_note")]
+        public string  PickupNote { get; set; }
         /// <summary>
         ///  Slug Unique code of each courier. Provide a single courier.(https://admin.aftership.com/settings/couriers). Get a list of courier slug using 
         /// </summary>
-        [JsonProperty("slug",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  Slug { get; set; }
+        [JsonProperty("slug")]
+        public string  Slug { get; set; }
         /// <summary>
         ///  TrackingAccountNumber Additional field required by some carriers to retrieve the tracking info. The shipper’s carrier account number. Refer to our article on  for more details.
         /// </summary>
-        [JsonProperty("tracking_account_number",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  TrackingAccountNumber { get; set; }
+        [JsonProperty("tracking_account_number")]
+        public string  TrackingAccountNumber { get; set; }
         /// <summary>
         ///  TrackingKey Additional field required by some carriers to retrieve the tracking info. A type of tracking credential required by some carriers. Refer to our article on  for more details.
         /// </summary>
-        [JsonProperty("tracking_key",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  TrackingKey { get; set; }
+        [JsonProperty("tracking_key")]
+        public string  TrackingKey { get; set; }
         /// <summary>
         ///  TrackingShipDate The date and time when the shipment is shipped by the merchant and ready for pickup by the carrier. The field supports the following formats:- YYYY-MM-DD- YYYY-MM-DDTHH:mm:ss- YYYY-MM-DDTHH:mm:ssZThe field serves two key purposes:- Calculate processing time metrics in the Order-to-delivery Analytics dashboard. To ensure accurate analytics, it's recommended to include timezone information when configuring this value- Required by certain carriers to retrieve tracking information as an additional tracking field.
         /// </summary>
-        [JsonProperty("tracking_ship_date",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  TrackingShipDate { get; set; }
+        [JsonProperty("tracking_ship_date")]
+        public string  TrackingShipDate { get; set; }
         /// <summary>
         ///  OrderNumber A unique, human-readable identifier for the order.
         /// </summary>
-        [JsonProperty("order_number",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  OrderNumber { get; set; }
+        [JsonProperty("order_number")]
+        public string  OrderNumber { get; set; }
         /// <summary>
         ///  OrderDate Order date in YYYY-MM-DDTHH:mm:ssZ format. e.g. 2021-07-26T11:23:51-05:00
         /// </summary>
-        [JsonProperty("order_date",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  OrderDate { get; set; }
+        [JsonProperty("order_date")]
+        public string  OrderDate { get; set; }
         /// <summary>
         ///  ShipmentType The carrier service type for the shipment. If you provide info for this field, AfterShip will not update it with info from the carrier.
         /// </summary>
-        [JsonProperty("shipment_type",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  ShipmentType { get; set; }
+        [JsonProperty("shipment_type")]
+        public string  ShipmentType { get; set; }
         /// <summary>
         ///  OriginCountryRegion The  for more details.
         /// </summary>
-        [JsonProperty("origin_country_region",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  OriginCountryRegion { get; set; }
+        [JsonProperty("origin_country_region")]
+        public string  OriginCountryRegion { get; set; }
         /// <summary>
         ///  OriginState The state of the sender’s address. This can help AfterShip with various functions like tracking, carrier auto-detection and auto-correction, calculating an EDD, etc.
         /// </summary>
-        [JsonProperty("origin_state",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  OriginState { get; set; }
+        [JsonProperty("origin_state")]
+        public string  OriginState { get; set; }
         /// <summary>
         ///  OriginCity The city of the sender’s address. This can help AfterShip with various functions like tracking, carrier auto-detection and auto-correction, calculating an EDD, etc.
         /// </summary>
-        [JsonProperty("origin_city",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  OriginCity { get; set; }
+        [JsonProperty("origin_city")]
+        public string  OriginCity { get; set; }
         /// <summary>
         ///  OriginPostalCode The postal of the sender’s address. This can help AfterShip with various functions like tracking, carrier auto-detection and auto-correction, calculating an EDD, etc.
         /// </summary>
-        [JsonProperty("origin_postal_code",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  OriginPostalCode { get; set; }
+        [JsonProperty("origin_postal_code")]
+        public string  OriginPostalCode { get; set; }
         /// <summary>
         ///  OriginRawLocation The sender address that the shipment is shipping from. This can help AfterShip with various functions like tracking, carrier auto-detection and auto-correction, calculating an EDD, etc.
         /// </summary>
-        [JsonProperty("origin_raw_location",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  OriginRawLocation { get; set; }
+        [JsonProperty("origin_raw_location")]
+        public string  OriginRawLocation { get; set; }
         /// <summary>
         ///  DestinationCountryRegion The  for more details.
         /// </summary>
-        [JsonProperty("destination_country_region",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  DestinationCountryRegion { get; set; }
+        [JsonProperty("destination_country_region")]
+        public string  DestinationCountryRegion { get; set; }
         /// <summary>
         ///  DestinationState The state of the recipient’s address. This can help AfterShip with various functions like tracking, carrier auto-detection and auto-correction, calculating an EDD, etc. Also the additional field required by some carriers to retrieve the tracking info. The state/province of the recipient’s address. Refer to our article on  for more details.
         /// </summary>
-        [JsonProperty("destination_state",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  DestinationState { get; set; }
+        [JsonProperty("destination_state")]
+        public string  DestinationState { get; set; }
         /// <summary>
         ///  DestinationCity The city of the recipient’s address. This can help AfterShip with various functions like tracking, carrier auto-detection and auto-correction, calculating an EDD, etc.
         /// </summary>
-        [JsonProperty("destination_city",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  DestinationCity { get; set; }
+        [JsonProperty("destination_city")]
+        public string  DestinationCity { get; set; }
         /// <summary>
         ///  DestinationPostalCode The postal of the recipient’s address. This can help AfterShip with various functions like tracking, carrier auto-detection and auto-correction, calculating an EDD, etc. Also the additional field required by some carriers to retrieve the tracking info. The postal code of the recipient’s address. Refer to our article on  for more details.
         /// </summary>
-        [JsonProperty("destination_postal_code",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  DestinationPostalCode { get; set; }
+        [JsonProperty("destination_postal_code")]
+        public string  DestinationPostalCode { get; set; }
         /// <summary>
         ///  DestinationRawLocation The shipping address that the shipment is shipping to. This can help AfterShip with various functions like tracking, carrier auto-detection and auto-correction, calculating an EDD, etc.
         /// </summary>
-        [JsonProperty("destination_raw_location",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  DestinationRawLocation { get; set; }
+        [JsonProperty("destination_raw_location")]
+        public string  DestinationRawLocation { get; set; }
         /// <summary>
         ///  LocationId The location_id refers to the place where you fulfilled the items.  - If you provide a location_id, the system will automatically use it as the tracking's origin address. However, passing both location_id and any origin address information simultaneously is not allowed.- Please make sure you add your locations .
         /// </summary>
-        [JsonProperty("location_id",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  LocationId { get; set; }
+        [JsonProperty("location_id")]
+        public string  LocationId { get; set; }
         /// <summary>
         ///  ShippingMethod The shipping_method string refers to the chosen method for delivering the package. Merchants typically offer various shipping methods to consumers during the checkout process, such as, Local Delivery, Free Express Worldwide Shipping, etc.
         /// </summary>
-        [JsonProperty("shipping_method",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  ShippingMethod { get; set; }
+        [JsonProperty("shipping_method")]
+        public string  ShippingMethod { get; set; }
         /// <summary>
         ///  Customers The field contains the customer information associated with the tracking. A maximum of three customer objects are allowed.
         /// </summary>
-        [JsonProperty("customers",NullValueHandling = NullValueHandling.Ignore)]
-        public CustomersUpdateTrackingByIdRequest? [] Customers { get; set; }
+        [JsonProperty("customers")]
+        public UpdateTrackingByIdRequestCustomers []? Customers { get; set; }
         public UpdateTrackingByIdRequest()
-        {
-        }
-    }
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    public class  CustomersUpdateTrackingByIdRequest
-    {
-        /// <summary>
-        ///  Role The  role of the customer, indicating whether the customer is  an individual or a company.
-        /// </summary>
-        [JsonProperty("role",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  Role { get; set; }
-        /// <summary>
-        ///  Name Customer name associated with the tracking.
-        /// </summary>
-        [JsonProperty("name",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  Name { get; set; }
-        /// <summary>
-        ///  PhoneNumber The phone number(s) to receive SMS notifications. Phone numbers should begin with a `+` sign and include the area code.
-        /// </summary>
-        [JsonProperty("phone_number",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  PhoneNumber { get; set; }
-        /// <summary>
-        ///  Email Email address(es) to receive email notifications.
-        /// </summary>
-        [JsonProperty("email",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  Email { get; set; }
-        /// <summary>
-        ///  Language The preferred language of the customer. If you have set up AfterShip notifications in different languages, we use this to send the tracking updates to the customer in their preferred language.
-        /// </summary>
-        [JsonProperty("language",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  Language { get; set; }
-
-        public CustomersUpdateTrackingByIdRequest()
         {
         }
     }

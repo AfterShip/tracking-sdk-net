@@ -22,29 +22,8 @@ namespace AfterShipTracking
         ///  Data 
         /// </summary>
         [JsonProperty("data")]
-        public DataCourierResponse  Data { get; set; }
+        public CourierResponseData  Data { get; set; }
         public CourierResponse()
-        {
-        }
-    }
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    public class  DataCourierResponse
-    {
-        /// <summary>
-        ///  Total Total count of courier objects
-        /// </summary>
-        [JsonProperty("total",NullValueHandling = NullValueHandling.Ignore)]
-        public int?  Total { get; set; }
-        /// <summary>
-        ///  Couriers Array of  object.
-        /// </summary>
-        [JsonProperty("couriers",NullValueHandling = NullValueHandling.Ignore)]
-        public Courier? [] Couriers { get; set; }
-
-        public DataCourierResponse()
         {
         }
     }

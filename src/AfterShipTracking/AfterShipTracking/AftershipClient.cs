@@ -106,17 +106,17 @@ namespace AfterShipTracking
         {
             if (string.IsNullOrEmpty(ApiKey))
             {
-                throw ErrorCode.GenSDKError(ErrorCode.INVALID_API_KEY, "apiKey cannot be empty");
+                throw ErrorCode.GenSDKError(ErrorCode.INVALID_API_KEY, "Invalid API key");
             }
 
             if (this.Timeout < 0 || this.Timeout > 30000)
             {
-                throw ErrorCode.GenSDKError(ErrorCode.INVALID_OPTION, "timeout invalid, timeout must between 0 and 30000 (milliseconds)");
+                throw ErrorCode.GenSDKError(ErrorCode.INVALID_OPTION, "Invalid option: Timeout");
             }
 
             if (this.MaxRetry < 0 || this.MaxRetry > 10)
             {
-                throw ErrorCode.GenSDKError(ErrorCode.INVALID_OPTION, "max retry invalid, max retry must between 0 and 10");
+                throw ErrorCode.GenSDKError(ErrorCode.INVALID_OPTION, "Invalid option: MaxRetry");
             }
 
             string[] array = {
@@ -127,14 +127,14 @@ namespace AfterShipTracking
             var authenticationType = AuthenticationType;
             if (!array.Contains(authenticationType))
             {
-                throw ErrorCode.GenSDKError(ErrorCode.INVALID_OPTION, "Invalid option: authenticationType should be one of API_KEY, AES, RSA");
+                throw ErrorCode.GenSDKError(ErrorCode.INVALID_OPTION, "Invalid option: AuthenticationType");
             }
 
-            if (authenticationType == AfterShipConfiguration.AUTHENTICATION_TYPE_AES || authenticationType == AfterShipConfiguration.AUTHENTICATION_TYPE_AES)
+            if (authenticationType == AfterShipConfiguration.AUTHENTICATION_TYPE_AES || authenticationType == AfterShipConfiguration.AUTHENTICATION_TYPE_RSA)
             {
                 if (string.IsNullOrEmpty(ApiSecret))
                 {
-                    throw ErrorCode.GenSDKError(ErrorCode.INVALID_API_KEY, "Invalid option: apiSecret cannot be empty");
+                    throw ErrorCode.GenSDKError(ErrorCode.INVALID_OPTION, "Invalid option: ApiSecret");
                 }
             }
         }

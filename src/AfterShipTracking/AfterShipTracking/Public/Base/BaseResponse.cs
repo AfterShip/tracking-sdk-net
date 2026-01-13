@@ -9,9 +9,6 @@ namespace AfterShipTracking
 {
     public class BaseResponse
     {
-        [JsonProperty("meta")]
-        public Meta Meta { get; set; }
-
         [JsonProperty("data")]
         public Object Data { get; set; }
     }

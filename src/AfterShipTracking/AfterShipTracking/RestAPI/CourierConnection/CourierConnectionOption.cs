@@ -10,56 +10,28 @@ namespace AfterShipTracking
     /// <summary>
     /// Description
     /// </summary>
-    public class PutCourierConnectionsByIdOptions : BaseOptions
-    {
-        public  PutCourierConnectionsByIdOptions()
-        {
-        }
-
-
-        public PutCourierConnectionsByIdRequest PutCourierConnectionsByIdRequest { get; set; }
-
-        override public string GetBody()
-        {
-            string body = null;
-
-            if ( PutCourierConnectionsByIdRequest != null)
-            {
-                body = BaseResourceService.ToJson(PutCourierConnectionsByIdRequest);
-            }
-            return body;
-        }
-    }
-    /// <summary>
-    /// Description
-    /// </summary>
-    public class DeleteCourierConnectionsByIdOptions : BaseOptions
-    {
-        public  DeleteCourierConnectionsByIdOptions()
-        {
-        }
-
-
-    }
-    /// <summary>
-    /// Description
-    /// </summary>
     public class GetCourierConnectionsOptions : BaseOptions
     {
         public  GetCourierConnectionsOptions()
         {
         }
 
-        public string CourierSlug { get; set; }
-        public string Cursor { get; set; }
-        public string Limit { get; set; }
+        public string? CourierSlug { get; set; }
+        public string? Cursor { get; set; }
+        public string? Limit { get; set; }
 
         override public List<KeyValuePair<string, string>> GetQueryParams()
         {
             var p = new List<KeyValuePair<string, string>>();
-            p.Add(new KeyValuePair<string, string>("courier_slug", CourierSlug));
-            p.Add(new KeyValuePair<string, string>("cursor", Cursor));
-            p.Add(new KeyValuePair<string, string>("limit", Limit));
+            if (CourierSlug != null) {
+                p.Add(new KeyValuePair<string, string>("courier_slug", CourierSlug));
+            }
+            if (Cursor != null) {
+                p.Add(new KeyValuePair<string, string>("cursor", Cursor));
+            }
+            if (Limit != null) {
+                p.Add(new KeyValuePair<string, string>("limit", Limit));
+            }
             return p;
         }
     }
@@ -92,6 +64,40 @@ namespace AfterShipTracking
     public class GetCourierConnectionsByIdOptions : BaseOptions
     {
         public  GetCourierConnectionsByIdOptions()
+        {
+        }
+
+
+    }
+    /// <summary>
+    /// Description
+    /// </summary>
+    public class PutCourierConnectionsByIdOptions : BaseOptions
+    {
+        public  PutCourierConnectionsByIdOptions()
+        {
+        }
+
+
+        public PutCourierConnectionsByIdRequest PutCourierConnectionsByIdRequest { get; set; }
+
+        override public string GetBody()
+        {
+            string body = null;
+
+            if ( PutCourierConnectionsByIdRequest != null)
+            {
+                body = BaseResourceService.ToJson(PutCourierConnectionsByIdRequest);
+            }
+            return body;
+        }
+    }
+    /// <summary>
+    /// Description
+    /// </summary>
+    public class DeleteCourierConnectionsByIdOptions : BaseOptions
+    {
+        public  DeleteCourierConnectionsByIdOptions()
         {
         }
 

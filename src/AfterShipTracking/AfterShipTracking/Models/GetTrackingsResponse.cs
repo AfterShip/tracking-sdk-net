@@ -4,67 +4,15 @@
  */
 using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using Headers = System.Net.Http.Headers.HttpResponseHeaders;
 
 namespace AfterShipTracking
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public class  GetTrackingsResponse
     {
-        /// <summary>
-        ///  Pagination The Pagination holds the information for the pagination when the response contains multiple objects.
-        /// </summary>
-        [JsonProperty("pagination")]
-        public PaginationGetTrackingsResponse?  Pagination { get; set; }
-        /// <summary>
-        ///  Trackings Array of 
-        /// </summary>
-        [JsonProperty("trackings")]
-        public Tracking? [] Trackings { get; set; }
-        /// <summary>
-        ///  Page 
-        /// </summary>
-        [JsonProperty("page")]
-        public int?  Page { get; set; }
-        /// <summary>
-        ///  Limit 
-        /// </summary>
-        [JsonProperty("limit")]
-        public int?  Limit { get; set; }
-        /// <summary>
-        ///  Count 
-        /// </summary>
-        [JsonProperty("total")]
-        public int?  Count { get; set; }
+        public Headers ResponseHeader { get; set; }
+        public GetTrackingsResponseData Data { get; set; }
         public GetTrackingsResponse()
-        {
-        }
-    }
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    public class  PaginationGetTrackingsResponse
-    {
-        /// <summary>
-        ///  Total The total number of trackings.
-        /// </summary>
-        [JsonProperty("total")]
-        public int?  Total { get; set; }
-        /// <summary>
-        ///  NextCursor A string representing the cursor value for the next page of results.
-        /// </summary>
-        [JsonProperty("next_cursor")]
-        public string?  NextCursor { get; set; }
-        /// <summary>
-        ///  HasNextPage To indicate if next page is available.
-        /// </summary>
-        [JsonProperty("has_next_page")]
-        public bool?  HasNextPage { get; set; }
-
-        public PaginationGetTrackingsResponse()
         {
         }
     }

@@ -17,15 +17,14 @@ namespace AfterShipTracking
         ///  Reason One of `DELIVERED`, `LOST` or `RETURNED_TO_SENDER`.- Mark the tracking as completed with `DELIVERED`. The tag of the tracking will be updated to `Delivered` and the subtag will be updated to `Delivered_001`.- Mark the tracking as completed with `LOST`. The tag of the tracking will be updated to `Exception` and the subtag will be updated to `Exception_013`.- Mark the tracking as completed with `RETURNED_TO_SENDER`. The tag of the tracking will be updated to `Exception` and the subtag will be updated to `Exception_011`.
         /// </summary>
         [JsonProperty("reason")]
-        public string  Reason { get; set; }
+        public MarkTrackingCompletedByIdRequestReason?  Reason { get; set; }
         /// <summary>
         ///  EventDatetime The actual occurrence time of the marked tracking status.The field supports the following formats: - YYYY-MM-DD- YYYY-MM-DDTHH:mm:ss- YYYY-MM-DDTHH:mm:ssZ
         /// </summary>
-        [JsonProperty("event_datetime",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  EventDatetime { get; set; }
+        [JsonProperty("event_datetime")]
+        public string  EventDatetime { get; set; }
         public MarkTrackingCompletedByIdRequest()
         {
         }
     }
-    
 }

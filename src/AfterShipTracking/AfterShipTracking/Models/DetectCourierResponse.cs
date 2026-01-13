@@ -4,28 +4,16 @@
  */
 using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using Headers = System.Net.Http.Headers.HttpResponseHeaders;
 
 namespace AfterShipTracking
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public class  DetectCourierResponse
     {
-        /// <summary>
-        ///  Total Total count of courier objects
-        /// </summary>
-        [JsonProperty("total")]
-        public int?  Total { get; set; }
-        /// <summary>
-        ///  Couriers Array of  object.
-        /// </summary>
-        [JsonProperty("couriers")]
-        public Courier? [] Couriers { get; set; }
+        public Headers ResponseHeader { get; set; }
+        public DetectCourierResponseData Data { get; set; }
         public DetectCourierResponse()
         {
         }
     }
-    
 }

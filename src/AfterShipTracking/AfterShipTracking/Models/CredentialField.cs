@@ -16,21 +16,20 @@ namespace AfterShipTracking
         /// <summary>
         ///  Name The display name of the credential field that users must provide when creating a carrier connection.
         /// </summary>
-        [JsonProperty("name",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  Name { get; set; }
+        [JsonProperty("name")]
+        public string  Name { get; set; }
         /// <summary>
         ///  Type The data type of the credential field, indicating what kind of input is expected.
         /// </summary>
-        [JsonProperty("type",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  Type { get; set; }
+        [JsonProperty("type")]
+        public string  Type { get; set; }
         /// <summary>
         ///  Required It indicates whether the credentials field must be provided or not when creating a carrier connection.
         /// </summary>
-        [JsonProperty("required",NullValueHandling = NullValueHandling.Ignore)]
-        public bool?  Required { get; set; }
+        [JsonProperty("required")]
+        public bool  Required { get; set; }
         public CredentialField()
         {
         }
     }
-    
 }

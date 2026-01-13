@@ -17,10 +17,9 @@ namespace AfterShipTracking
         ///  EstimatedDeliveryDates 
         /// </summary>
         [JsonProperty("estimated_delivery_dates")]
-        public EstimatedDeliveryDateRequest [] EstimatedDeliveryDates { get; set; }
+        public EstimatedDeliveryDateRequest []? EstimatedDeliveryDates { get; set; }
         public PredictBatchRequest()
         {
         }
     }
-    
 }

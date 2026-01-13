@@ -21,55 +21,9 @@ namespace AfterShipTracking
         /// <summary>
         ///  Data 
         /// </summary>
-        [JsonProperty("data",NullValueHandling = NullValueHandling.Ignore)]
-        public DataCourierConnectionResponseForGetCourierConnections?  Data { get; set; }
+        [JsonProperty("data")]
+        public CourierConnectionResponseForGetCourierConnectionsData  Data { get; set; }
         public CourierConnectionResponseForGetCourierConnections()
-        {
-        }
-    }
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    public class  DataCourierConnectionResponseForGetCourierConnections
-    {
-        /// <summary>
-        ///  Pagination 
-        /// </summary>
-        [JsonProperty("pagination",NullValueHandling = NullValueHandling.Ignore)]
-        public PaginationDataCourierConnectionResponseForGetCourierConnections?  Pagination { get; set; }
-        /// <summary>
-        ///  CourierConnections 
-        /// </summary>
-        [JsonProperty("courier_connections",NullValueHandling = NullValueHandling.Ignore)]
-        public CourierConnection? [] CourierConnections { get; set; }
-
-        public DataCourierConnectionResponseForGetCourierConnections()
-        {
-        }
-    }
-    /// <summary>
-    /// 
-    /// </summary>
-    public class  PaginationDataCourierConnectionResponseForGetCourierConnections
-    {
-        /// <summary>
-        ///  Total The total number of courier connections.
-        /// </summary>
-        [JsonProperty("total",NullValueHandling = NullValueHandling.Ignore)]
-        public int?  Total { get; set; }
-        /// <summary>
-        ///  NextCursor A string representing the cursor value for the next page of results.
-        /// </summary>
-        [JsonProperty("next_cursor",NullValueHandling = NullValueHandling.Ignore)]
-        public string?  NextCursor { get; set; }
-        /// <summary>
-        ///  HasNextPage To indicate if next page is available.
-        /// </summary>
-        [JsonProperty("has_next_page",NullValueHandling = NullValueHandling.Ignore)]
-        public bool?  HasNextPage { get; set; }
-
-        public PaginationDataCourierConnectionResponseForGetCourierConnections()
         {
         }
     }
