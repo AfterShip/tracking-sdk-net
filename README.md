@@ -20,10 +20,10 @@ If you need support using AfterShip products, please contact support@aftership.c
   - [Error Handling](#error-handling)
     - [Error List](#error-list)
   - [Endpoints](#endpoints)
-    - [/trackings](#trackings)
     - [/couriers](#couriers)
     - [/courier-connections](#courier-connections)
     - [/estimated-delivery-date](#estimated-delivery-date)
+    - [/trackings](#trackings)
   - [Help](#help)
   - [License](#license)
 
@@ -38,7 +38,7 @@ Before you begin to integrate:
 
 ### API and SDK Version
 
-- SDK Version: 
+- SDK Version: 15.0.0
 - API Version: 2026-01
 ## Quick Start
 
@@ -168,14 +168,6 @@ The SDK will return an error object when there is any error during the request, 
 
 The AfterShip SDK has the following resource which are exactly the same as the API endpoints:
 
-- TrackingResource
-  - Get trackings
-  - Create a tracking
-  - Get a tracking by ID
-  - Update a tracking by ID
-  - Delete a tracking by ID
-  - Retrack an expired tracking by ID
-  - Mark tracking as completed by ID
 - CourierResource
   - Get couriers
   - Detect courier
@@ -188,91 +180,14 @@ The AfterShip SDK has the following resource which are exactly the same as the A
 - EstimatedDeliveryDateResource
   - Prediction for the Estimated Delivery Date
   - Batch prediction for the Estimated Delivery Date
-
-### /trackings
-**GET** /trackings
-
-```csharp
-    GetTrackingsOptions options = new GetTrackingsOptions();
-    GetTrackingsResponse response = client.Tracking.GetTrackings(options);
-    if (response != null)
-    {
-        Console.WriteLine(response);
-    }
-```
-
-**POST** /trackings
-
-```csharp
-    CreateTrackingOptions options = new CreateTrackingOptions();
-    CreateTrackingRequest createTrackingRequest = new CreateTrackingRequest();
-    createTrackingRequest.TrackingNumber = "valid_value";
-    options.CreateTrackingRequest = createTrackingRequest;
-    CreateTrackingResponse response = client.Tracking.CreateTracking(options);
-    if (response != null)
-    {
-        Console.WriteLine(response);
-    }
-```
-
-**GET** /trackings/{id}
-
-```csharp
-    GetTrackingByIdOptions options = new GetTrackingByIdOptions();
-    GetTrackingByIdResponse response = client.Tracking.GetTrackingById("valid_value",options);
-    if (response != null)
-    {
-        Console.WriteLine(response);
-    }
-```
-
-**PUT** /trackings/{id}
-
-```csharp
-    UpdateTrackingByIdOptions options = new UpdateTrackingByIdOptions();
-    UpdateTrackingByIdRequest updateTrackingByIdRequest = new UpdateTrackingByIdRequest();
-    options.UpdateTrackingByIdRequest = updateTrackingByIdRequest;
-    UpdateTrackingByIdResponse response = client.Tracking.UpdateTrackingById("valid_value",options);
-    if (response != null)
-    {
-        Console.WriteLine(response);
-    }
-```
-
-**DELETE** /trackings/{id}
-
-```csharp
-    DeleteTrackingByIdOptions options = new DeleteTrackingByIdOptions();
-    DeleteTrackingByIdResponse response = client.Tracking.DeleteTrackingById("valid_value",options);
-    if (response != null)
-    {
-        Console.WriteLine(response);
-    }
-```
-
-**POST** /trackings/{id}/retrack
-
-```csharp
-    RetrackTrackingByIdOptions options = new RetrackTrackingByIdOptions();
-    RetrackTrackingByIdResponse response = client.Tracking.RetrackTrackingById("valid_value",options);
-    if (response != null)
-    {
-        Console.WriteLine(response);
-    }
-```
-
-**POST** /trackings/{id}/mark-as-completed
-
-```csharp
-    MarkTrackingCompletedByIdOptions options = new MarkTrackingCompletedByIdOptions();
-    MarkTrackingCompletedByIdRequest markTrackingCompletedByIdRequest = new MarkTrackingCompletedByIdRequest();
-    options.MarkTrackingCompletedByIdRequest = markTrackingCompletedByIdRequest;
-    MarkTrackingCompletedByIdResponse response = client.Tracking.MarkTrackingCompletedById("valid_value",options);
-    if (response != null)
-    {
-        Console.WriteLine(response);
-    }
-```
+- TrackingResource
+  - Get trackings
+  - Create a tracking
+  - Get a tracking by ID
+  - Update a tracking by ID
+  - Delete a tracking by ID
+  - Retrack an expired tracking by ID
+  - Mark tracking as completed by ID
 
 ### /couriers
 **GET** /couriers
@@ -389,6 +304,91 @@ The AfterShip SDK has the following resource which are exactly the same as the A
     PredictBatchRequest predictBatchRequest = new PredictBatchRequest();
     options.PredictBatchRequest = predictBatchRequest;
     PredictBatchResponse response = client.EstimatedDeliveryDate.PredictBatch(options);
+    if (response != null)
+    {
+        Console.WriteLine(response);
+    }
+```
+
+### /trackings
+**GET** /trackings
+
+```csharp
+    GetTrackingsOptions options = new GetTrackingsOptions();
+    GetTrackingsResponse response = client.Tracking.GetTrackings(options);
+    if (response != null)
+    {
+        Console.WriteLine(response);
+    }
+```
+
+**POST** /trackings
+
+```csharp
+    CreateTrackingOptions options = new CreateTrackingOptions();
+    CreateTrackingRequest createTrackingRequest = new CreateTrackingRequest();
+    createTrackingRequest.TrackingNumber = "valid_value";
+    options.CreateTrackingRequest = createTrackingRequest;
+    CreateTrackingResponse response = client.Tracking.CreateTracking(options);
+    if (response != null)
+    {
+        Console.WriteLine(response);
+    }
+```
+
+**GET** /trackings/{id}
+
+```csharp
+    GetTrackingByIdOptions options = new GetTrackingByIdOptions();
+    GetTrackingByIdResponse response = client.Tracking.GetTrackingById("valid_value",options);
+    if (response != null)
+    {
+        Console.WriteLine(response);
+    }
+```
+
+**PUT** /trackings/{id}
+
+```csharp
+    UpdateTrackingByIdOptions options = new UpdateTrackingByIdOptions();
+    UpdateTrackingByIdRequest updateTrackingByIdRequest = new UpdateTrackingByIdRequest();
+    options.UpdateTrackingByIdRequest = updateTrackingByIdRequest;
+    UpdateTrackingByIdResponse response = client.Tracking.UpdateTrackingById("valid_value",options);
+    if (response != null)
+    {
+        Console.WriteLine(response);
+    }
+```
+
+**DELETE** /trackings/{id}
+
+```csharp
+    DeleteTrackingByIdOptions options = new DeleteTrackingByIdOptions();
+    DeleteTrackingByIdResponse response = client.Tracking.DeleteTrackingById("valid_value",options);
+    if (response != null)
+    {
+        Console.WriteLine(response);
+    }
+```
+
+**POST** /trackings/{id}/retrack
+
+```csharp
+    RetrackTrackingByIdOptions options = new RetrackTrackingByIdOptions();
+    RetrackTrackingByIdResponse response = client.Tracking.RetrackTrackingById("valid_value",options);
+    if (response != null)
+    {
+        Console.WriteLine(response);
+    }
+```
+
+**POST** /trackings/{id}/mark-as-completed
+
+```csharp
+    MarkTrackingCompletedByIdOptions options = new MarkTrackingCompletedByIdOptions();
+    MarkTrackingCompletedByIdRequest markTrackingCompletedByIdRequest = new MarkTrackingCompletedByIdRequest();
+    options.MarkTrackingCompletedByIdRequest = markTrackingCompletedByIdRequest;
+    MarkTrackingCompletedByIdResponse response = client.Tracking.MarkTrackingCompletedById("valid_value",options);
     if (response != null)
     {
         Console.WriteLine(response);
