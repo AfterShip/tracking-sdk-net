@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 namespace AfterShipTracking
 {
     /// <summary>
-    /// Object describes the tracking information.<div style="display:none; height: 0"></div>
+    /// Object describes the tracking information.<div style="visibility:hidden; height: 0"></div>
     /// </summary>
     public class  Tracking
     {
@@ -163,6 +163,11 @@ namespace AfterShipTracking
         /// </summary>
         [JsonProperty("shipment_weight")]
         public TrackingShipmentWeight?  ShipmentWeight { get; set; }
+        /// <summary>
+        ///  ShipmentDimensions Physical dimensions of the package (length, width and height).
+        /// </summary>
+        [JsonProperty("shipment_dimensions")]
+        public TrackingShipmentDimensions?  ShipmentDimensions { get; set; }
         /// <summary>
         ///  SignedBy Signed by information for delivered shipment.
         /// </summary>
@@ -383,6 +388,31 @@ namespace AfterShipTracking
         /// </summary>
         [JsonProperty("customers")]
         public TrackingCustomers []? Customers { get; set; }
+        /// <summary>
+        ///  ProofOfDelivery An array of proof of delivery (POD) records, such as a signature or photo captured upon successful delivery.This field returns a value only after the feature is enabled. Please contact your customer success manager if you'd like to know more.
+        /// </summary>
+        [JsonProperty("proof_of_delivery")]
+        public TrackingProofOfDelivery []? ProofOfDelivery { get; set; }
+        /// <summary>
+        ///  MultiPieceInfo Multi-piece shipment refers to a scenario where a single shipment order is fulfilled by multiple physical packages. Each piece has its own carrier-assigned tracking number, but all pieces belong to the same shipment. This commonly occurs when an order is too large to fit in one box, or when items are packed separately for handling reasons.This field contains multi-piece shipment metadata describing a group of packages that belong to the same shipment.This field returns a value only when your subscription plan includes a multi-piece feature. To enable, go to .
+        /// </summary>
+        [JsonProperty("multi_piece_info")]
+        public TrackingMultiPieceInfo?  MultiPieceInfo { get; set; }
+        /// <summary>
+        ///  ShipmentDirection Indicates the business direction of the shipment in the e-commerce fulfillment lifecycle.Possible values:- `forward`: A forward (outbound-to-customer) shipment created for order fulfillment.- `return`: A return (customer-to-merchant) shipment created for after-sales return or exchange.This field is populated in either of the following cases:1. You explicitly provided it when creating the tracking.2. AfterShip automatically detected a linked forward or return shipment.It also determines which related shipment object (`forward_shipment` or `return_shipment`) may appear in the response.
+        /// </summary>
+        [JsonProperty("shipment_direction")]
+        public TrackingShipmentDirection?  ShipmentDirection { get; set; }
+        /// <summary>
+        ///  ReturnShipment The associated return shipment linked to the current outbound shipment.This field is only present when `shipment_direction = "forward"` and AfterShip has detected a linked return shipment.
+        /// </summary>
+        [JsonProperty("return_shipment")]
+        public TrackingReturnShipment?  ReturnShipment { get; set; }
+        /// <summary>
+        ///  ForwardShipment The original outbound shipment linked to this return. Use this to trace a return back to its source delivery.This field is only present when `shipment_direction = "return"` and AfterShip has detected a linked forward shipment.
+        /// </summary>
+        [JsonProperty("forward_shipment")]
+        public TrackingForwardShipment?  ForwardShipment { get; set; }
         public Tracking()
         {
         }

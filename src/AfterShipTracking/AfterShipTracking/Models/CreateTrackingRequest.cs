@@ -193,6 +193,11 @@ namespace AfterShipTracking
         /// </summary>
         [JsonProperty("customers")]
         public CreateTrackingRequestCustomers []? Customers { get; set; }
+        /// <summary>
+        ///  ShipmentDirection Indicates the business direction of the shipment in the e-commerce fulfillment lifecycle.Possible values:- `forward`: A forward (outbound-to-customer) shipment created for order fulfillment.- `return`: A return (customer-to-merchant) shipment created for after-sales return or exchange.When provided, this field gives AfterShip additional context about the shipment's intent, enabling more accurate status identification.
+        /// </summary>
+        [JsonProperty("shipment_direction")]
+        public CreateTrackingRequestShipmentDirection?  ShipmentDirection { get; set; }
         public CreateTrackingRequest()
         {
         }

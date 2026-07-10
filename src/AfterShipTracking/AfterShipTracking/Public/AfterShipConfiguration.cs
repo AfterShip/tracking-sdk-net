@@ -15,7 +15,7 @@ namespace AfterShipTracking
         public const string SDK_PREFIX = "AFTERSHIP_TRACKING_SDK_";
         public const int DEFAULT_MAX_RETRY = 2;
         public const int DEFAULT_TIMEOUT = 30000;
-        public const string DEFAULT_USER_AGENT = "tracking-sdk-net/15.0.0 (https://www.aftership.com) System.Net.Http.HttpClient/0.0.0";
+        public const string DEFAULT_USER_AGENT = "tracking-sdk-net/16.0.0 (https://www.aftership.com) System.Net.Http.HttpClient/0.0.0";
         public const string DEFAULT_DOMAIN = "https://api.aftership.com";
 
         private static string domain;

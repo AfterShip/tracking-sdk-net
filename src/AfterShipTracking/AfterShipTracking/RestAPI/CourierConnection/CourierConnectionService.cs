@@ -18,7 +18,7 @@ namespace AfterShipTracking
 
         public GetCourierConnectionsResponse GetCourierConnections( GetCourierConnectionsOptions? options = null)
         {
-            string path = $"/tracking/2026-01/courier-connections";
+            string path = $"/tracking/2026-07/courier-connections";
             Request request = new Request(
                 HttpMethod.Get,
                 path,
@@ -36,7 +36,7 @@ namespace AfterShipTracking
         }
         public PostCourierConnectionsResponse PostCourierConnections( PostCourierConnectionsOptions? options = null)
         {
-            string path = $"/tracking/2026-01/courier-connections";
+            string path = $"/tracking/2026-07/courier-connections";
             Request request = new Request(
                 HttpMethod.Post,
                 path,
@@ -54,7 +54,7 @@ namespace AfterShipTracking
         }
         public GetCourierConnectionsByIdResponse GetCourierConnectionsById(string id,  GetCourierConnectionsByIdOptions? options = null)
         {
-            string path = $"/tracking/2026-01/courier-connections/{id}";
+            string path = $"/tracking/2026-07/courier-connections/{id}";
             if (string.IsNullOrEmpty(id))
             {
                throw ErrorCode.GenSDKError(ErrorCode.BAD_REQUEST, "Invalid request"+": `id` is invalid");
@@ -76,7 +76,7 @@ namespace AfterShipTracking
         }
         public PutCourierConnectionsByIdResponse PutCourierConnectionsById(string id,  PutCourierConnectionsByIdOptions? options = null)
         {
-            string path = $"/tracking/2026-01/courier-connections/{id}";
+            string path = $"/tracking/2026-07/courier-connections/{id}";
             if (string.IsNullOrEmpty(id))
             {
                throw ErrorCode.GenSDKError(ErrorCode.BAD_REQUEST, "Invalid request"+": `id` is invalid");
@@ -98,7 +98,7 @@ namespace AfterShipTracking
         }
         public DeleteCourierConnectionsByIdResponse DeleteCourierConnectionsById(string id,  DeleteCourierConnectionsByIdOptions? options = null)
         {
-            string path = $"/tracking/2026-01/courier-connections/{id}";
+            string path = $"/tracking/2026-07/courier-connections/{id}";
             if (string.IsNullOrEmpty(id))
             {
                throw ErrorCode.GenSDKError(ErrorCode.BAD_REQUEST, "Invalid request"+": `id` is invalid");

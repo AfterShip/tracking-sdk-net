@@ -12,5 +12,5 @@
 
 internal class AssemblyInformation
 {
-    public const string AssemblyInformationalVersion = "15.0.0";
+    public const string AssemblyInformationalVersion = "16.0.0";
 }

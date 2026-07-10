@@ -18,7 +18,7 @@ namespace AfterShipTracking
 
         public GetTrackingsResponse GetTrackings( GetTrackingsOptions? options = null)
         {
-            string path = $"/tracking/2026-01/trackings";
+            string path = $"/tracking/2026-07/trackings";
             Request request = new Request(
                 HttpMethod.Get,
                 path,
@@ -36,7 +36,7 @@ namespace AfterShipTracking
         }
         public CreateTrackingResponse CreateTracking( CreateTrackingOptions? options = null)
         {
-            string path = $"/tracking/2026-01/trackings";
+            string path = $"/tracking/2026-07/trackings";
             Request request = new Request(
                 HttpMethod.Post,
                 path,
@@ -54,7 +54,7 @@ namespace AfterShipTracking
         }
         public GetTrackingByIdResponse GetTrackingById(string id,  GetTrackingByIdOptions? options = null)
         {
-            string path = $"/tracking/2026-01/trackings/{id}";
+            string path = $"/tracking/2026-07/trackings/{id}";
             if (string.IsNullOrEmpty(id))
             {
                throw ErrorCode.GenSDKError(ErrorCode.BAD_REQUEST, "Invalid request"+": `id` is invalid");
@@ -76,7 +76,7 @@ namespace AfterShipTracking
         }
         public UpdateTrackingByIdResponse UpdateTrackingById(string id,  UpdateTrackingByIdOptions? options = null)
         {
-            string path = $"/tracking/2026-01/trackings/{id}";
+            string path = $"/tracking/2026-07/trackings/{id}";
             if (string.IsNullOrEmpty(id))
             {
                throw ErrorCode.GenSDKError(ErrorCode.BAD_REQUEST, "Invalid request"+": `id` is invalid");
@@ -98,7 +98,7 @@ namespace AfterShipTracking
         }
         public DeleteTrackingByIdResponse DeleteTrackingById(string id,  DeleteTrackingByIdOptions? options = null)
         {
-            string path = $"/tracking/2026-01/trackings/{id}";
+            string path = $"/tracking/2026-07/trackings/{id}";
             if (string.IsNullOrEmpty(id))
             {
                throw ErrorCode.GenSDKError(ErrorCode.BAD_REQUEST, "Invalid request"+": `id` is invalid");
@@ -120,7 +120,7 @@ namespace AfterShipTracking
         }
         public RetrackTrackingByIdResponse RetrackTrackingById(string id,  RetrackTrackingByIdOptions? options = null)
         {
-            string path = $"/tracking/2026-01/trackings/{id}/retrack";
+            string path = $"/tracking/2026-07/trackings/{id}/retrack";
             if (string.IsNullOrEmpty(id))
             {
                throw ErrorCode.GenSDKError(ErrorCode.BAD_REQUEST, "Invalid request"+": `id` is invalid");
@@ -142,7 +142,7 @@ namespace AfterShipTracking
         }
         public MarkTrackingCompletedByIdResponse MarkTrackingCompletedById(string id,  MarkTrackingCompletedByIdOptions? options = null)
         {
-            string path = $"/tracking/2026-01/trackings/{id}/mark-as-completed";
+            string path = $"/tracking/2026-07/trackings/{id}/mark-as-completed";
             if (string.IsNullOrEmpty(id))
             {
                throw ErrorCode.GenSDKError(ErrorCode.BAD_REQUEST, "Invalid request"+": `id` is invalid");

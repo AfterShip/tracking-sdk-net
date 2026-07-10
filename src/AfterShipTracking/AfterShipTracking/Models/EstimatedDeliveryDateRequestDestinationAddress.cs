@@ -19,7 +19,7 @@ namespace AfterShipTracking
         [JsonProperty("country_region")]
         public string  CountryRegion { get; set; }
         /// <summary>
-        ///  State State, province, or the equivalent location of the destination address where the package will be delivered.Either `destination_address.state` or `destination_address.postal_code` is required.
+        ///  State State, province, or the equivalent location of the destination address where the package will be delivered.</br><span style=color:#ff6b2b;padding:2px>**Either `destination_address.state` or `destination_address.postal_code` is required.**</span>
         /// </summary>
         [JsonProperty("state")]
         public string?  State { get; set; }
@@ -29,7 +29,7 @@ namespace AfterShipTracking
         [JsonProperty("city")]
         public string?  City { get; set; }
         /// <summary>
-        ///  PostalCode Postal code of the destination address.Either `destination_address.state` or `destination_address.postal_code` is required.
+        ///  PostalCode Postal code of the destination address.</br><span style=color:#ff6b2b;padding:2px>**Either `destination_address.state` or `destination_address.postal_code` is required.**</span>
         /// </summary>
         [JsonProperty("postal_code")]
         public string?  PostalCode { get; set; }

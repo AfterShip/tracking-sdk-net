@@ -19,7 +19,7 @@ namespace AfterShipTracking
         [JsonProperty("country_region")]
         public string  CountryRegion { get; set; }
         /// <summary>
-        ///  State State, province, or the equivalent location of the origin address. Use 3 letters of ISO 3166-1 country/region code for countries/regions without state. Either `origin_address.state` or `origin_address.postal_code` is required.
+        ///  State State, province, or the equivalent location of the origin address. Use 3 letters of ISO 3166-1 country/region code for countries/regions without state. </br><span style=color:#ff6b2b;padding:2px>**Either `origin_address.state` or `origin_address.postal_code` is required.**</span>
         /// </summary>
         [JsonProperty("state")]
         public string?  State { get; set; }
@@ -29,7 +29,7 @@ namespace AfterShipTracking
         [JsonProperty("city")]
         public string?  City { get; set; }
         /// <summary>
-        ///  PostalCode Postal code of the origin address. Use 3 letters of ISO 3166-1 country/region code for countries/regions without postal code. Either `origin_address.state` or `origin_address.postal_code` is required.
+        ///  PostalCode Postal code of the origin address. Use 3 letters of ISO 3166-1 country/region code for countries/regions without postal code. </br><span style=color:#ff6b2b;padding:2px>**Either `origin_address.state` or `origin_address.postal_code` is required.**</span>
         /// </summary>
         [JsonProperty("postal_code")]
         public string?  PostalCode { get; set; }

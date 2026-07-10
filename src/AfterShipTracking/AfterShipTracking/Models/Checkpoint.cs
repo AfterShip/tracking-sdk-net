@@ -98,6 +98,11 @@ namespace AfterShipTracking
         /// </summary>
         [JsonProperty("source")]
         public CheckpointSource?  Source { get; set; }
+        /// <summary>
+        ///  Hash Unique hash identifier for each checkpoint event, could be used for deduplication.
+        /// </summary>
+        [JsonProperty("hash")]
+        public string  Hash { get; set; }
         public Checkpoint()
         {
         }

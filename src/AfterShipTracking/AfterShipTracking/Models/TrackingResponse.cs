@@ -19,7 +19,7 @@ namespace AfterShipTracking
         [JsonProperty("meta")]
         public Meta  Meta { get; set; }
         /// <summary>
-        ///  Data Object describes the tracking information.<div style="display:none; height: 0"></div>
+        ///  Data Object describes the tracking information.<div style="visibility:hidden; height: 0"></div>
         /// </summary>
         [JsonProperty("data")]
         public Tracking  Data { get; set; }

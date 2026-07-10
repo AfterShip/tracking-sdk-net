@@ -38,6 +38,11 @@ namespace AfterShipTracking
         /// </summary>
         [JsonProperty("language")]
         public string  Language { get; set; }
+        /// <summary>
+        ///  Id The customer's identifier on the merchant or platform (for example, Shopify) side.
+        /// </summary>
+        [JsonProperty("id")]
+        public string  Id { get; set; }
         public CreateTrackingRequestCustomers()
         {
         }
