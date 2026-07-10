@@ -11,18 +11,18 @@ namespace AfterShipTracking
     /// <summary>
     /// The latitude and longitude coordinates indicate the precise location of the shipments that are currently in transit.
     /// </summary>
-    public class  CheckpointCoordinate
+    public class CheckpointCoordinate
     {
         /// <summary>
         ///  Latitude Represents the latitude.
         /// </summary>
         [JsonProperty("latitude")]
-        public double  Latitude { get; set; }
+        public double Latitude { get; set; }
         /// <summary>
         ///  Longitude Represents the longitude.
         /// </summary>
         [JsonProperty("longitude")]
-        public double  Longitude { get; set; }
+        public double Longitude { get; set; }
         public CheckpointCoordinate()
         {
         }

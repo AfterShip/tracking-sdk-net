@@ -11,48 +11,48 @@ namespace AfterShipTracking
     /// <summary>
     /// 
     /// </summary>
-    public class  EstimatedDeliveryDateRequest
+    public class EstimatedDeliveryDateRequest
     {
         /// <summary>
         ///  Slug AfterShip's unique code of courier. Please refer to https://track.aftership.com/couriers/download.
         /// </summary>
         [JsonProperty("slug")]
-        public string  Slug { get; set; }
+        public string Slug { get; set; }
         /// <summary>
         ///  ServiceTypeName AfterShip’s unique code represents carrier’s shipping and delivery options. Refer to .
         /// </summary>
         [JsonProperty("service_type_name")]
-        public string?  ServiceTypeName { get; set; }
+        public string? ServiceTypeName { get; set; }
         /// <summary>
         ///  OriginAddress The location from where the package is picked up by the carrier to be delivered to the final destination.
         /// </summary>
         [JsonProperty("origin_address")]
-        public EstimatedDeliveryDateRequestOriginAddress  OriginAddress { get; set; }
+        public EstimatedDeliveryDateRequestOriginAddress OriginAddress { get; set; }
         /// <summary>
         ///  DestinationAddress The final destination of the customer where the delivery will be made.
         /// </summary>
         [JsonProperty("destination_address")]
-        public EstimatedDeliveryDateRequestDestinationAddress  DestinationAddress { get; set; }
+        public EstimatedDeliveryDateRequestDestinationAddress DestinationAddress { get; set; }
         /// <summary>
         ///  Weight AfterShip uses this object to calculate the total weight of the order.
         /// </summary>
         [JsonProperty("weight")]
-        public EstimatedDeliveryDateRequestWeight?  Weight { get; set; }
+        public EstimatedDeliveryDateRequestWeight? Weight { get; set; }
         /// <summary>
         ///  PackageCount The number of packages.
         /// </summary>
         [JsonProperty("package_count")]
-        public int?  PackageCount { get; set; }
+        public int? PackageCount { get; set; }
         /// <summary>
         ///  PickupTime The local pickup time in the origin address time zone of the package.</br><span style=color:#ff6b2b;padding:2px>**Either `pickup_time` or `estimated_pickup` is required.**</span>
         /// </summary>
         [JsonProperty("pickup_time")]
-        public string?  PickupTime { get; set; }
+        public string? PickupTime { get; set; }
         /// <summary>
         ///  EstimatedPickup The local pickup time of the package.</br><span style=color:#ff6b2b;padding:2px>**Either `pickup_time` or `estimated_pickup` is required.**</span>
         /// </summary>
         [JsonProperty("estimated_pickup")]
-        public EstimatedDeliveryDateRequestEstimatedPickup?  EstimatedPickup { get; set; }
+        public EstimatedDeliveryDateRequestEstimatedPickup? EstimatedPickup { get; set; }
         public EstimatedDeliveryDateRequest()
         {
         }

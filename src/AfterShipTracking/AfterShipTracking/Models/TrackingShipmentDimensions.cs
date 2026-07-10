@@ -11,28 +11,28 @@ namespace AfterShipTracking
     /// <summary>
     /// Physical dimensions of the package (length, width and height).
     /// </summary>
-    public class  TrackingShipmentDimensions
+    public class TrackingShipmentDimensions
     {
         /// <summary>
         ///  Unit The unit in which the dimension values are expressed. Allowed values: cm, in
         /// </summary>
         [JsonProperty("unit")]
-        public string  Unit { get; set; }
+        public string Unit { get; set; }
         /// <summary>
         ///  Length The length of the shipment package.
         /// </summary>
         [JsonProperty("length")]
-        public double  Length { get; set; }
+        public double Length { get; set; }
         /// <summary>
         ///  Width The width of the shipment package.
         /// </summary>
         [JsonProperty("width")]
-        public double  Width { get; set; }
+        public double Width { get; set; }
         /// <summary>
         ///  Height The height of the shipment package.
         /// </summary>
         [JsonProperty("height")]
-        public double  Height { get; set; }
+        public double Height { get; set; }
         public TrackingShipmentDimensions()
         {
         }

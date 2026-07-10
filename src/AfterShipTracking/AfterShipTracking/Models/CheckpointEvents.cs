@@ -11,18 +11,18 @@ namespace AfterShipTracking
     /// <summary>
     /// 
     /// </summary>
-    public class  CheckpointEvents
+    public class CheckpointEvents
     {
         /// <summary>
         ///  Code Represents the event code.
         /// </summary>
         [JsonProperty("code")]
-        public string  Code { get; set; }
+        public string Code { get; set; }
         /// <summary>
         ///  Reason Describes the specific reason that led to the event.
         /// </summary>
         [JsonProperty("reason")]
-        public CheckpointEventsReason?  Reason { get; set; }
+        public CheckpointEventsReason? Reason { get; set; }
         public CheckpointEvents()
         {
         }

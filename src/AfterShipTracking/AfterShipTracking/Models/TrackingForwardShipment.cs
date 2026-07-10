@@ -11,13 +11,13 @@ namespace AfterShipTracking
     /// <summary>
     /// The original outbound shipment linked to this return. Use this to trace a return back to its source delivery.This field is only present when `shipment_direction = "return"` and AfterShip has detected a linked forward shipment.
     /// </summary>
-    public class  TrackingForwardShipment
+    public class TrackingForwardShipment
     {
         /// <summary>
         ///  Id AfterShip system-assigned unique identifier of the linked outbound shipment.
         /// </summary>
         [JsonProperty("id")]
-        public string  Id { get; set; }
+        public string Id { get; set; }
         public TrackingForwardShipment()
         {
         }

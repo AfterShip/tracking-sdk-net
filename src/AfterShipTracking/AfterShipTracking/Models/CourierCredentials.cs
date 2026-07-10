@@ -11,13 +11,13 @@ namespace AfterShipTracking
     /// <summary>
     /// Refers to the authentication details required for each specific carrier (such as API keys, username, password, etc.) that the user must provide to create a carrier connection. The content varies by carrier.
     /// </summary>
-    public class  CourierCredentials
+    public class CourierCredentials
     {
         /// <summary>
         ///  Fields Through this field, users can get the specific authentication information needed when creating a courier connection to one specific carrier, such as API keys, usernames, and passwords. Each field includes properties like name, data type, and whether it's required.
         /// </summary>
         [JsonProperty("fields")]
-        public CredentialField []? Fields { get; set; }
+        public CredentialField[]? Fields { get; set; }
         public CourierCredentials()
         {
         }

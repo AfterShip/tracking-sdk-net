@@ -16,7 +16,7 @@ namespace AfterShipTracking
             this.HttpClient = httpClient;
         }
 
-        public PredictResponse Predict( PredictOptions? options = null)
+        public PredictResponse Predict(PredictOptions? options = null)
         {
             string path = $"/tracking/2026-07/estimated-delivery-date/predict";
             Request request = new Request(
@@ -34,7 +34,7 @@ namespace AfterShipTracking
 
             return result;
         }
-        public PredictBatchResponse PredictBatch( PredictBatchOptions? options = null)
+        public PredictBatchResponse PredictBatch(PredictBatchOptions? options = null)
         {
             string path = $"/tracking/2026-07/estimated-delivery-date/predict-batch";
             Request request = new Request(

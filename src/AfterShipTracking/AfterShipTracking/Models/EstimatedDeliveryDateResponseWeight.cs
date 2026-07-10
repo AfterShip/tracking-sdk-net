@@ -11,18 +11,18 @@ namespace AfterShipTracking
     /// <summary>
     /// AfterShip uses this object to calculate the total weight of the order.
     /// </summary>
-    public class  EstimatedDeliveryDateResponseWeight
+    public class EstimatedDeliveryDateResponseWeight
     {
         /// <summary>
         ///  Unit The weight unit of the package. 
         /// </summary>
         [JsonProperty("unit")]
-        public string  Unit { get; set; }
+        public string Unit { get; set; }
         /// <summary>
         ///  Value The weight of the shipment.
         /// </summary>
         [JsonProperty("value")]
-        public double  Value { get; set; }
+        public double Value { get; set; }
         public EstimatedDeliveryDateResponseWeight()
         {
         }

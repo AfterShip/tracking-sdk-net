@@ -11,408 +11,408 @@ namespace AfterShipTracking
     /// <summary>
     /// Object describes the tracking information.<div style="visibility:hidden; height: 0"></div>
     /// </summary>
-    public class  Tracking
+    public class Tracking
     {
         /// <summary>
         ///  Id A  system-generated tracking ID by default, which can be customized by the user when creating a tracking.
         /// </summary>
         [JsonProperty("id")]
-        public string  Id { get; set; }
+        public string Id { get; set; }
         /// <summary>
         ///  LegacyId The length of the tracking ID has been increased from 24 characters to 32 characters. We will use the legacy_id field to store the original 24-character tracking ID to maintain compatibility with existing data. Therefore, all tracking endpoints will continue to work with the legacy_id field as before.
         /// </summary>
         [JsonProperty("legacy_id")]
-        public string  LegacyId { get; set; }
+        public string LegacyId { get; set; }
         /// <summary>
         ///  CreatedAt The date and time the shipment was imported or added to AfterShip. It uses the format `YYYY-MM-DDTHH:mm:ssZ` for the timezone GMT +0.
         /// </summary>
         [JsonProperty("created_at")]
-        public string  CreatedAt { get; set; }
+        public string CreatedAt { get; set; }
         /// <summary>
         ///  UpdatedAt The date and time the shipment was updated. It uses the format `YYYY-MM-DDTHH:mm:ssZ` for the timezone GMT +0.
         /// </summary>
         [JsonProperty("updated_at")]
-        public string  UpdatedAt { get; set; }
+        public string UpdatedAt { get; set; }
         /// <summary>
         ///  TrackingNumber Tracking number.
         /// </summary>
         [JsonProperty("tracking_number")]
-        public string  TrackingNumber { get; set; }
+        public string TrackingNumber { get; set; }
         /// <summary>
         ///  Slug Unique courier code. When importing a shipment with no courier slug and the tracking number can’t be recognized, the courier will be marked as `unrecognized`. Get courier codes .
         /// </summary>
         [JsonProperty("slug")]
-        public string  Slug { get; set; }
+        public string Slug { get; set; }
         /// <summary>
         ///  Active Whether or not AfterShip will continue tracking the shipment. Value is false when no further updates for a few days since last update.
         /// </summary>
         [JsonProperty("active")]
-        public bool  Active { get; set; }
+        public bool Active { get; set; }
         /// <summary>
         ///  CustomFields Custom fields that accept an object with string field. In order to protect the privacy of your customers, do not include any  in custom fields.
         /// </summary>
         [JsonProperty("custom_fields")]
-        public Dictionary<string, string>?  CustomFields { get; set; }
+        public Dictionary<string, string>? CustomFields { get; set; }
         /// <summary>
         ///  TransitTime Total transit time in days.- For delivered shipments: Transit time (in days) = Delivered date - Pick-up date- For undelivered shipments: Transit time (in days) = Current date - Pick-up dateValue as `null` for the shipment without pick-up date.
         /// </summary>
         [JsonProperty("transit_time")]
-        public int?  TransitTime { get; set; }
+        public int? TransitTime { get; set; }
         /// <summary>
         ///  OriginCountryRegion The  for the origin country/region. E.g. USA for the United States.
         /// </summary>
         [JsonProperty("origin_country_region")]
-        public string?  OriginCountryRegion { get; set; }
+        public string? OriginCountryRegion { get; set; }
         /// <summary>
         ///  OriginState The state of the sender’s address.
         /// </summary>
         [JsonProperty("origin_state")]
-        public string?  OriginState { get; set; }
+        public string? OriginState { get; set; }
         /// <summary>
         ///  OriginCity The city of the sender’s address.
         /// </summary>
         [JsonProperty("origin_city")]
-        public string?  OriginCity { get; set; }
+        public string? OriginCity { get; set; }
         /// <summary>
         ///  OriginPostalCode The postal code of the sender’s address.
         /// </summary>
         [JsonProperty("origin_postal_code")]
-        public string?  OriginPostalCode { get; set; }
+        public string? OriginPostalCode { get; set; }
         /// <summary>
         ///  OriginRawLocation The sender address that the shipment is shipping from.
         /// </summary>
         [JsonProperty("origin_raw_location")]
-        public string?  OriginRawLocation { get; set; }
+        public string? OriginRawLocation { get; set; }
         /// <summary>
         ///  DestinationCountryRegion The  for the destination country/region. E.g. USA for the United States.
         /// </summary>
         [JsonProperty("destination_country_region")]
-        public string?  DestinationCountryRegion { get; set; }
+        public string? DestinationCountryRegion { get; set; }
         /// <summary>
         ///  DestinationState The state of the recipient’s address.
         /// </summary>
         [JsonProperty("destination_state")]
-        public string?  DestinationState { get; set; }
+        public string? DestinationState { get; set; }
         /// <summary>
         ///  DestinationCity The city of the recipient’s address.
         /// </summary>
         [JsonProperty("destination_city")]
-        public string?  DestinationCity { get; set; }
+        public string? DestinationCity { get; set; }
         /// <summary>
         ///  DestinationPostalCode The postal code of the recipient’s address.
         /// </summary>
         [JsonProperty("destination_postal_code")]
-        public string?  DestinationPostalCode { get; set; }
+        public string? DestinationPostalCode { get; set; }
         /// <summary>
         ///  DestinationRawLocation The shipping address that the shipment is shipping to.
         /// </summary>
         [JsonProperty("destination_raw_location")]
-        public string?  DestinationRawLocation { get; set; }
+        public string? DestinationRawLocation { get; set; }
         /// <summary>
         ///  CourierDestinationCountryRegion Destination country/region of the tracking detected from the courier. ISO Alpha-3 (three letters). Value will be `null` if the courier doesn't provide the destination country.
         /// </summary>
         [JsonProperty("courier_destination_country_region")]
-        public string?  CourierDestinationCountryRegion { get; set; }
+        public string? CourierDestinationCountryRegion { get; set; }
         /// <summary>
         ///  CourierEstimatedDeliveryDate The field contains the estimated delivery date provided by the carrier.
         /// </summary>
         [JsonProperty("courier_estimated_delivery_date")]
-        public TrackingCourierEstimatedDeliveryDate?  CourierEstimatedDeliveryDate { get; set; }
+        public TrackingCourierEstimatedDeliveryDate? CourierEstimatedDeliveryDate { get; set; }
         /// <summary>
         ///  Note Text field for the note.
         /// </summary>
         [JsonProperty("note")]
-        public string?  Note { get; set; }
+        public string? Note { get; set; }
         /// <summary>
         ///  OrderId A globally-unique identifier for the order.
         /// </summary>
         [JsonProperty("order_id")]
-        public string?  OrderId { get; set; }
+        public string? OrderId { get; set; }
         /// <summary>
         ///  OrderIdPath The URL for the order in your system or store.
         /// </summary>
         [JsonProperty("order_id_path")]
-        public string?  OrderIdPath { get; set; }
+        public string? OrderIdPath { get; set; }
         /// <summary>
         ///  OrderDate The date and time the order was created in your system or store. It uses the format: `YYYY-MM-DDTHH:mm:ssZ` based on whichever timezone you provide.
         /// </summary>
         [JsonProperty("order_date")]
-        public string?  OrderDate { get; set; }
+        public string? OrderDate { get; set; }
         /// <summary>
         ///  ShipmentPackageCount Number of packages under the tracking.
         /// </summary>
         [JsonProperty("shipment_package_count")]
-        public double?  ShipmentPackageCount { get; set; }
+        public double? ShipmentPackageCount { get; set; }
         /// <summary>
         ///  ShipmentPickupDate The date and time the shipment was picked up by the carrier. It uses the timezone where the pickup occured. The format may differ depending on how the carrier provides it:- YYYY-MM-DD- YYYY-MM-DDTHH:mm:ss- YYYY-MM-DDTHH:mm:ssZ
         /// </summary>
         [JsonProperty("shipment_pickup_date")]
-        public string?  ShipmentPickupDate { get; set; }
+        public string? ShipmentPickupDate { get; set; }
         /// <summary>
         ///  ShipmentDeliveryDate The date and time the shipment was delivered. It uses the shipment recipient’s timezone. The format may differ depending on how the carrier provides it:- YYYY-MM-DD- YYYY-MM-DDTHH:mm:ss- YYYY-MM-DDTHH:mm:ssZ
         /// </summary>
         [JsonProperty("shipment_delivery_date")]
-        public string?  ShipmentDeliveryDate { get; set; }
+        public string? ShipmentDeliveryDate { get; set; }
         /// <summary>
         ///  ShipmentType The carrier service type for the shipment.
         /// </summary>
         [JsonProperty("shipment_type")]
-        public string?  ShipmentType { get; set; }
+        public string? ShipmentType { get; set; }
         /// <summary>
         ///  ShipmentWeight The shipment_weight field represents the total weight of the shipment. In scenarios where the carrier does not provide this information, you can provide the weight to AfterShip. We will prioritize the data provided by the carrier, if available. The shipment weight will be included in the Response and accessed through the GET API, Webhook, and CSV export. It will also be displayed on the AfterShip Tracking admin. Additionally, it plays a significant role in error-free shipment handling and carbon emission calculations, ensuring accurate and informed decision-making
         /// </summary>
         [JsonProperty("shipment_weight")]
-        public TrackingShipmentWeight?  ShipmentWeight { get; set; }
+        public TrackingShipmentWeight? ShipmentWeight { get; set; }
         /// <summary>
         ///  ShipmentDimensions Physical dimensions of the package (length, width and height).
         /// </summary>
         [JsonProperty("shipment_dimensions")]
-        public TrackingShipmentDimensions?  ShipmentDimensions { get; set; }
+        public TrackingShipmentDimensions? ShipmentDimensions { get; set; }
         /// <summary>
         ///  SignedBy Signed by information for delivered shipment.
         /// </summary>
         [JsonProperty("signed_by")]
-        public string?  SignedBy { get; set; }
+        public string? SignedBy { get; set; }
         /// <summary>
         ///  Source Source of how this tracking is added.
         /// </summary>
         [JsonProperty("source")]
-        public string  Source { get; set; }
+        public string Source { get; set; }
         /// <summary>
         ///  Tag Current status of tracking. (
         /// </summary>
         [JsonProperty("tag")]
-        public Tag?  Tag { get; set; }
+        public Tag? Tag { get; set; }
         /// <summary>
         ///  Subtag Current subtag of tracking. (
         /// </summary>
         [JsonProperty("subtag")]
-        public string  Subtag { get; set; }
+        public string Subtag { get; set; }
         /// <summary>
         ///  SubtagMessage Normalized tracking message. (
         /// </summary>
         [JsonProperty("subtag_message")]
-        public string  SubtagMessage { get; set; }
+        public string SubtagMessage { get; set; }
         /// <summary>
         ///  Title By default this field shows the `tracking_number`, but you can customize it as you wish with any info (e.g. the order number).
         /// </summary>
         [JsonProperty("title")]
-        public string  Title { get; set; }
+        public string Title { get; set; }
         /// <summary>
         ///  TrackedCount Number of attempts AfterShip tracks at courier's system.
         /// </summary>
         [JsonProperty("tracked_count")]
-        public double  TrackedCount { get; set; }
+        public double TrackedCount { get; set; }
         /// <summary>
         ///  Language The recipient’s language. If you set up AfterShip notifications in different languages, we use this to send the recipient tracking updates in their preferred language.
         /// </summary>
         [JsonProperty("language")]
-        public string?  Language { get; set; }
+        public string? Language { get; set; }
         /// <summary>
         ///  UniqueToken Deprecated
         /// </summary>
         [JsonProperty("unique_token")]
-        public string  UniqueToken { get; set; }
+        public string UniqueToken { get; set; }
         /// <summary>
         ///  Checkpoints Array of checkpoint object describes the checkpoint information.
         /// </summary>
         [JsonProperty("checkpoints")]
-        public Checkpoint []? Checkpoints { get; set; }
+        public Checkpoint[]? Checkpoints { get; set; }
         /// <summary>
         ///  SubscribedSmses Phone number(s) subscribed to receive sms notifications.
         /// </summary>
         [JsonProperty("subscribed_smses")]
-        public string []? SubscribedSmses { get; set; }
+        public string[]? SubscribedSmses { get; set; }
         /// <summary>
         ///  SubscribedEmails Email address(es) subscribed to receive email notifications.
         /// </summary>
         [JsonProperty("subscribed_emails")]
-        public string []? SubscribedEmails { get; set; }
+        public string[]? SubscribedEmails { get; set; }
         /// <summary>
         ///  ReturnToSender Whether or not the shipment is returned to sender. Value is `true` when any of its checkpoints has subtag `Exception_010` (returning to sender) or `Exception_011` (returned to sender). Otherwise value is `false`.
         /// </summary>
         [JsonProperty("return_to_sender")]
-        public bool  ReturnToSender { get; set; }
+        public bool ReturnToSender { get; set; }
         /// <summary>
         ///  OrderPromisedDeliveryDate The promised delivery date of the order in shipment recipient’s timezone.
         /// </summary>
         [JsonProperty("order_promised_delivery_date")]
-        public TrackingOrderPromisedDeliveryDate?  OrderPromisedDeliveryDate { get; set; }
+        public TrackingOrderPromisedDeliveryDate? OrderPromisedDeliveryDate { get; set; }
         /// <summary>
         ///  DeliveryType Shipment delivery type- pickup_at_store- pickup_at_courier- door_to_door
         /// </summary>
         [JsonProperty("delivery_type")]
-        public string?  DeliveryType { get; set; }
+        public string? DeliveryType { get; set; }
         /// <summary>
         ///  PickupLocation Shipment pickup location for receiver
         /// </summary>
         [JsonProperty("pickup_location")]
-        public string?  PickupLocation { get; set; }
+        public string? PickupLocation { get; set; }
         /// <summary>
         ///  PickupNote Shipment pickup note for receiver
         /// </summary>
         [JsonProperty("pickup_note")]
-        public string?  PickupNote { get; set; }
+        public string? PickupNote { get; set; }
         /// <summary>
         ///  CourierTrackingLink Official tracking URL of the courier (if any). The language parameter of this link relies on the destination country/region and the language associated with the shipment, if the data regarding the destination country/region and language of the shipment is not available, AfterShip will set the language parameter of the link to "US" by default.
         /// </summary>
         [JsonProperty("courier_tracking_link")]
-        public string?  CourierTrackingLink { get; set; }
+        public string? CourierTrackingLink { get; set; }
         /// <summary>
         ///  FirstAttemptedAt The date and time of the carrier’s first attempt to deliver the package to the recipient.  It uses the shipment recipient’s timezone. The format may differ depending on how the carrier provides it:- YYYY-MM-DDTHH:mm:ss- YYYY-MM-DDTHH:mm:ssZ
         /// </summary>
         [JsonProperty("first_attempted_at")]
-        public string?  FirstAttemptedAt { get; set; }
+        public string? FirstAttemptedAt { get; set; }
         /// <summary>
         ///  CourierRedirectLink Delivery instructions (delivery date or address) can be modified by visiting the link if supported by a carrier. The language parameter of this link relies on the destination country/region and the language associated with the shipment, if the data regarding the destination country/region and language of the shipment is not available, AfterShip will set the language parameter of the link to "US" by default.
         /// </summary>
         [JsonProperty("courier_redirect_link")]
-        public string?  CourierRedirectLink { get; set; }
+        public string? CourierRedirectLink { get; set; }
         /// <summary>
         ///  TrackingAccountNumber Additional field required by some carriers to retrieve the tracking info. The shipper’s carrier account number. Refer to our article on  for more details.
         /// </summary>
         [JsonProperty("tracking_account_number")]
-        public string?  TrackingAccountNumber { get; set; }
+        public string? TrackingAccountNumber { get; set; }
         /// <summary>
         ///  TrackingKey Additional field required by some carriers to retrieve the tracking info. A type of tracking credential required by some carriers. Refer to our article on  for more details.
         /// </summary>
         [JsonProperty("tracking_key")]
-        public string?  TrackingKey { get; set; }
+        public string? TrackingKey { get; set; }
         /// <summary>
         ///  TrackingShipDate The date and time when the shipment is shipped by the merchant and ready for pickup by the carrier. The field supports the following formats:- YYYY-MM-DD- YYYY-MM-DDTHH:mm:ss- YYYY-MM-DDTHH:mm:ssZThe field serves two key purposes:- Calculate processing time metrics in the Order-to-delivery Analytics dashboard. To ensure accurate analytics, it's recommended to include timezone information when configuring this value- Required by certain carriers to retrieve tracking information as an additional tracking field.
         /// </summary>
         [JsonProperty("tracking_ship_date")]
-        public string?  TrackingShipDate { get; set; }
+        public string? TrackingShipDate { get; set; }
         /// <summary>
         ///  OnTimeStatus Whether the tracking is delivered on time or not.
         /// </summary>
         [JsonProperty("on_time_status")]
-        public string?  OnTimeStatus { get; set; }
+        public string? OnTimeStatus { get; set; }
         /// <summary>
         ///  OnTimeDifference The difference days of the on time.
         /// </summary>
         [JsonProperty("on_time_difference")]
-        public double?  OnTimeDifference { get; set; }
+        public double? OnTimeDifference { get; set; }
         /// <summary>
         ///  OrderTags The tags of the order.
         /// </summary>
         [JsonProperty("order_tags")]
-        public string []? OrderTags { get; set; }
+        public string[]? OrderTags { get; set; }
         /// <summary>
         ///  AftershipEstimatedDeliveryDate The estimated delivery date of the shipment provided by AfterShip’s AI and shown to the recipients. It uses the format `YYYY-MM-DD` based on the shipment recipient’s timezone.
         /// </summary>
         [JsonProperty("aftership_estimated_delivery_date")]
-        public TrackingAftershipEstimatedDeliveryDate?  AftershipEstimatedDeliveryDate { get; set; }
+        public TrackingAftershipEstimatedDeliveryDate? AftershipEstimatedDeliveryDate { get; set; }
         /// <summary>
         ///  CustomEstimatedDeliveryDate Estimated delivery time of the shipment based on your . It uses the format `YYYY-MM-DD` based on the shipment recipient’s timezone.
         /// </summary>
         [JsonProperty("custom_estimated_delivery_date")]
-        public TrackingCustomEstimatedDeliveryDate?  CustomEstimatedDeliveryDate { get; set; }
+        public TrackingCustomEstimatedDeliveryDate? CustomEstimatedDeliveryDate { get; set; }
         /// <summary>
         ///  OrderNumber A unique, human-readable identifier for the order.
         /// </summary>
         [JsonProperty("order_number")]
-        public string?  OrderNumber { get; set; }
+        public string? OrderNumber { get; set; }
         /// <summary>
         ///  FirstEstimatedDelivery The shipment’s original estimated delivery date. It could be provided by the carrier, AfterShip AI, or based on your custom settings. The format of carrier EDDs may differ depending on how the carrier provides it:- YYYY-MM-DD- YYYY-MM-DDTHH:mm:ss- YYYY-MM-DDTHH:mm:ssZ AfterShip AI and custom EDDs always use the format `YYYY-MM-DD`. All EDDs use the shipment recipient’s timezone.
         /// </summary>
         [JsonProperty("first_estimated_delivery")]
-        public TrackingFirstEstimatedDelivery?  FirstEstimatedDelivery { get; set; }
+        public TrackingFirstEstimatedDelivery? FirstEstimatedDelivery { get; set; }
         /// <summary>
         ///  LatestEstimatedDelivery The most recently calculated estimated delivery date. It could be provided by the carrier, AfterShip AI, or based on your custom settings. The format of carrier EDDs may differ depending on how the carrier provides it:- YYYY-MM-DD- YYYY-MM-DDTHH:mm:ss- YYYY-MM-DDTHH:mm:ssZ AfterShip AI and custom EDDs always use the format `YYYY-MM-DD`. All EDDs use the shipment recipient’s timezone.
         /// </summary>
         [JsonProperty("latest_estimated_delivery")]
-        public TrackingLatestEstimatedDelivery?  LatestEstimatedDelivery { get; set; }
+        public TrackingLatestEstimatedDelivery? LatestEstimatedDelivery { get; set; }
         /// <summary>
         ///  ShipmentTags Used to add tags to your shipments to help categorize and filter them easily.
         /// </summary>
         [JsonProperty("shipment_tags")]
-        public string []? ShipmentTags { get; set; }
+        public string[]? ShipmentTags { get; set; }
         /// <summary>
         ///  CourierConnectionId If you have multiple accounts connected for a single carrier on AfterShip, we have introduced the courier_connection_id field to allow you to specify the carrier account associated with each shipment. By providing this information, you enable us to accurately track and monitor your shipments based on the correct carrier account.(</br>In the event that you do not specify the courier_connection_id, we will handle your shipment using the connection that was created earliest among your connected accounts.
         /// </summary>
         [JsonProperty("courier_connection_id")]
-        public string?  CourierConnectionId { get; set; }
+        public string? CourierConnectionId { get; set; }
         /// <summary>
         ///  CarbonEmissions The model contains the total amount of carbon emissions generated by the shipment. - AfterShip will provide this data only when it is available, and its availability is contingent upon the location and weight information that AfterShip can obtain.- The values will be accessible solely for shipments that have been successfully delivered. However, in the event of a shipping update after the delivery status has been achieved, the value may change.- It’s a paid service and only for Tracking Enterprise users, please contact your customer success manager if you want to know more.
         /// </summary>
         [JsonProperty("carbon_emissions")]
-        public TrackingCarbonEmissions?  CarbonEmissions { get; set; }
+        public TrackingCarbonEmissions? CarbonEmissions { get; set; }
         /// <summary>
         ///  LocationId The location_id refers to the place where you fulfilled the items.  - If you provide a location_id, the system will automatically use it as the tracking's origin address. However, passing both location_id and any origin address information simultaneously is not allowed.- Please make sure you add your locations .
         /// </summary>
         [JsonProperty("location_id")]
-        public string?  LocationId { get; set; }
+        public string? LocationId { get; set; }
         /// <summary>
         ///  ShippingMethod The shipping_method string refers to the chosen method for delivering the package. Merchants typically offer various shipping methods to consumers during the checkout process, such as, Local Delivery, Free Express Worldwide Shipping, etc.
         /// </summary>
         [JsonProperty("shipping_method")]
-        public string?  ShippingMethod { get; set; }
+        public string? ShippingMethod { get; set; }
         /// <summary>
         ///  FailedDeliveryAttempts By dynamically tracking failed delivery attempts during shipment, this field allows you to pinpoint carriers accountable for the most failures. Analyzing the root cause of these failures enables you to improve carriers' delivery standard operating procedures (SOP), leading to an overall enhancement in delivery service quality.
         /// </summary>
         [JsonProperty("failed_delivery_attempts")]
-        public int?  FailedDeliveryAttempts { get; set; }
+        public int? FailedDeliveryAttempts { get; set; }
         /// <summary>
         ///  SignatureRequirement The signature_requirement field serves the purpose of validating the service option type, specifically proof of delivery. By collecting the recipient's signature upon delivery, it ensures the package reaches the intended recipient and prevents disputes related to non-delivery or lost packages.</br>
         /// </summary>
         [JsonProperty("signature_requirement")]
-        public TrackingSignatureRequirement?  SignatureRequirement { get; set; }
+        public TrackingSignatureRequirement? SignatureRequirement { get; set; }
         /// <summary>
         ///  DeliveryLocationType The delivery location type represents the secure area where the carrier leaves the package, such as a safe place, locker, mailbox, front porch, etc. This information helps ensure the shipment reaches the intended recipient efficiently, minimizing the risk of theft or damage.
         /// </summary>
         [JsonProperty("delivery_location_type")]
-        public string?  DeliveryLocationType { get; set; }
+        public string? DeliveryLocationType { get; set; }
         /// <summary>
         ///  AftershipTrackingUrl The tracking URL directs your customers to the shipment tracking page which can display either the default or a customized page based on segmentation rules.- The universal URL is used by default, but you can opt for a custom domain if you have one. Learn how to set up a custom domain .The field is not automatically enabled in API & Webhook. Please contact support if you’d like to enable it.
         /// </summary>
         [JsonProperty("aftership_tracking_url")]
-        public string?  AftershipTrackingUrl { get; set; }
+        public string? AftershipTrackingUrl { get; set; }
         /// <summary>
         ///  AftershipTrackingOrderUrl The order URL directs your customers to the order tracking page, which includes all shipments. It can display either the default or a customized page based on segmentation rules.- The universal URL is used by default, but you can opt for a custom domain if you have one. Learn how to set up a custom domain .The field is not automatically enabled in API & Webhook. Please contact support if you’d like to enable it.
         /// </summary>
         [JsonProperty("aftership_tracking_order_url")]
-        public string?  AftershipTrackingOrderUrl { get; set; }
+        public string? AftershipTrackingOrderUrl { get; set; }
         /// <summary>
         ///  FirstMile The field contains information about the first leg of the shipping starting from the carrier picking up the shipment from the shipper to the point where they hand it over to the last-mile carrier. Once AfterShip detects the shipment is multi-leg, we will populate the first-mile information under this object. 
         /// </summary>
         [JsonProperty("first_mile")]
-        public TrackingFirstMile?  FirstMile { get; set; }
+        public TrackingFirstMile? FirstMile { get; set; }
         /// <summary>
         ///  LastMile This field contains information about the last leg of the shipment, starting from the carrier who hands it over to the last-mile carrier, all the way to delivery. Once AfterShip detects that the shipment involves multiple legs and identifies the last-mile carrier, we will populate the last-mile carrier information in this object. Alternatively, the user can provide this information in this field to specify the last-mile carrier, which is helpful if AfterShip is unable to detect it automatically.
         /// </summary>
         [JsonProperty("last_mile")]
-        public TrackingLastMile?  LastMile { get; set; }
+        public TrackingLastMile? LastMile { get; set; }
         /// <summary>
         ///  Customers The field contains the customer information associated with the tracking. A maximum of three customer objects are allowed.
         /// </summary>
         [JsonProperty("customers")]
-        public TrackingCustomers []? Customers { get; set; }
+        public TrackingCustomers[]? Customers { get; set; }
         /// <summary>
         ///  ProofOfDelivery An array of proof of delivery (POD) records, such as a signature or photo captured upon successful delivery.This field returns a value only after the feature is enabled. Please contact your customer success manager if you'd like to know more.
         /// </summary>
         [JsonProperty("proof_of_delivery")]
-        public TrackingProofOfDelivery []? ProofOfDelivery { get; set; }
+        public TrackingProofOfDelivery[]? ProofOfDelivery { get; set; }
         /// <summary>
         ///  MultiPieceInfo Multi-piece shipment refers to a scenario where a single shipment order is fulfilled by multiple physical packages. Each piece has its own carrier-assigned tracking number, but all pieces belong to the same shipment. This commonly occurs when an order is too large to fit in one box, or when items are packed separately for handling reasons.This field contains multi-piece shipment metadata describing a group of packages that belong to the same shipment.This field returns a value only when your subscription plan includes a multi-piece feature. To enable, go to .
         /// </summary>
         [JsonProperty("multi_piece_info")]
-        public TrackingMultiPieceInfo?  MultiPieceInfo { get; set; }
+        public TrackingMultiPieceInfo? MultiPieceInfo { get; set; }
         /// <summary>
         ///  ShipmentDirection Indicates the business direction of the shipment in the e-commerce fulfillment lifecycle.Possible values:- `forward`: A forward (outbound-to-customer) shipment created for order fulfillment.- `return`: A return (customer-to-merchant) shipment created for after-sales return or exchange.This field is populated in either of the following cases:1. You explicitly provided it when creating the tracking.2. AfterShip automatically detected a linked forward or return shipment.It also determines which related shipment object (`forward_shipment` or `return_shipment`) may appear in the response.
         /// </summary>
         [JsonProperty("shipment_direction")]
-        public TrackingShipmentDirection?  ShipmentDirection { get; set; }
+        public TrackingShipmentDirection? ShipmentDirection { get; set; }
         /// <summary>
         ///  ReturnShipment The associated return shipment linked to the current outbound shipment.This field is only present when `shipment_direction = "forward"` and AfterShip has detected a linked return shipment.
         /// </summary>
         [JsonProperty("return_shipment")]
-        public TrackingReturnShipment?  ReturnShipment { get; set; }
+        public TrackingReturnShipment? ReturnShipment { get; set; }
         /// <summary>
         ///  ForwardShipment The original outbound shipment linked to this return. Use this to trace a return back to its source delivery.This field is only present when `shipment_direction = "return"` and AfterShip has detected a linked forward shipment.
         /// </summary>
         [JsonProperty("forward_shipment")]
-        public TrackingForwardShipment?  ForwardShipment { get; set; }
+        public TrackingForwardShipment? ForwardShipment { get; set; }
         public Tracking()
         {
         }

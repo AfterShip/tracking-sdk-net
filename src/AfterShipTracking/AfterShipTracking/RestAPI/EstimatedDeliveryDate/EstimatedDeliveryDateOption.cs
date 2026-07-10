@@ -12,7 +12,7 @@ namespace AfterShipTracking
     /// </summary>
     public class PredictOptions : BaseOptions
     {
-        public  PredictOptions()
+        public PredictOptions()
         {
         }
 
@@ -23,7 +23,7 @@ namespace AfterShipTracking
         {
             string body = null;
 
-            if ( PredictRequest != null)
+            if (PredictRequest != null)
             {
                 body = BaseResourceService.ToJson(PredictRequest);
             }
@@ -35,7 +35,7 @@ namespace AfterShipTracking
     /// </summary>
     public class PredictBatchOptions : BaseOptions
     {
-        public  PredictBatchOptions()
+        public PredictBatchOptions()
         {
         }
 
@@ -46,7 +46,7 @@ namespace AfterShipTracking
         {
             string body = null;
 
-            if ( PredictBatchRequest != null)
+            if (PredictBatchRequest != null)
             {
                 body = BaseResourceService.ToJson(PredictBatchRequest);
             }

@@ -11,23 +11,23 @@ namespace AfterShipTracking
     /// <summary>
     /// The promised delivery date of the order in shipment recipient’s timezone.
     /// </summary>
-    public class  CreateTrackingRequestOrderPromisedDeliveryDate
+    public class CreateTrackingRequestOrderPromisedDeliveryDate
     {
         /// <summary>
         ///  PromisedDeliveryDate The promised delivery date of the order.It uses the formats:- YYYY-MM-DD- YYYY-MM-DDTHH:mm:ss- YYYY-MM-DDTHH:mm:ssZ
         /// </summary>
         [JsonProperty("promised_delivery_date")]
-        public string?  PromisedDeliveryDate { get; set; }
+        public string? PromisedDeliveryDate { get; set; }
         /// <summary>
         ///  PromisedDeliveryDateMin Earliest promised delivery date of the order. It uses the formats:- YYYY-MM-DD- YYYY-MM-DDTHH:mm:ss- YYYY-MM-DDTHH:mm:ssZ
         /// </summary>
         [JsonProperty("promised_delivery_date_min")]
-        public string?  PromisedDeliveryDateMin { get; set; }
+        public string? PromisedDeliveryDateMin { get; set; }
         /// <summary>
         ///  PromisedDeliveryDateMax Latest promised delivery date of the order. It uses the formats:- YYYY-MM-DD- YYYY-MM-DDTHH:mm:ss- YYYY-MM-DDTHH:mm:ssZ
         /// </summary>
         [JsonProperty("promised_delivery_date_max")]
-        public string?  PromisedDeliveryDateMax { get; set; }
+        public string? PromisedDeliveryDateMax { get; set; }
         public CreateTrackingRequestOrderPromisedDeliveryDate()
         {
         }

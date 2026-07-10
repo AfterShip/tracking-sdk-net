@@ -38,7 +38,7 @@ namespace AfterShipTracking
                 {
                     return domain;
                 }
-                return Environment.GetEnvironmentVariable(SDK_PREFIX+"DOMAIN") ?? DEFAULT_DOMAIN;
+                return Environment.GetEnvironmentVariable(SDK_PREFIX + "DOMAIN") ?? DEFAULT_DOMAIN;
             }
 
             set
@@ -78,13 +78,13 @@ namespace AfterShipTracking
         {
             get
             {
-                if (timeout >0 )
+                if (timeout > 0)
                 {
                     return timeout;
                 }
                 if (int.TryParse(Environment.GetEnvironmentVariable(SDK_PREFIX + "TIMEOUT"), out int n) && n > 0)
                 {
-                      return n;
+                    return n;
                 }
                 return DEFAULT_TIMEOUT;
             }
@@ -106,7 +106,7 @@ namespace AfterShipTracking
                 {
                     return userAgent;
                 }
-                return Environment.GetEnvironmentVariable(SDK_PREFIX+"USER_AGENT") ?? null;
+                return Environment.GetEnvironmentVariable(SDK_PREFIX + "USER_AGENT") ?? null;
             }
 
             set
@@ -127,7 +127,7 @@ namespace AfterShipTracking
                 {
                     return proxy;
                 }
-                return Environment.GetEnvironmentVariable(SDK_PREFIX+"PROXY") ?? "";
+                return Environment.GetEnvironmentVariable(SDK_PREFIX + "PROXY") ?? "";
             }
 
             set
@@ -147,7 +147,7 @@ namespace AfterShipTracking
                 {
                     return apiKey;
                 }
-                return Environment.GetEnvironmentVariable(SDK_PREFIX+"API_KEY") ?? "";
+                return Environment.GetEnvironmentVariable(SDK_PREFIX + "API_KEY") ?? "";
             }
 
             set
@@ -167,7 +167,7 @@ namespace AfterShipTracking
                 {
                     return apiSecret;
                 }
-                return Environment.GetEnvironmentVariable(SDK_PREFIX+"API_SECRET") ?? "";
+                return Environment.GetEnvironmentVariable(SDK_PREFIX + "API_SECRET") ?? "";
             }
 
             set
@@ -187,7 +187,7 @@ namespace AfterShipTracking
                 {
                     return authenticationType;
                 }
-                return Environment.GetEnvironmentVariable(SDK_PREFIX+"AUTHENTICATION_TYPE") ?? AUTHENTICATION_TYPE_API_KEY;
+                return Environment.GetEnvironmentVariable(SDK_PREFIX + "AUTHENTICATION_TYPE") ?? AUTHENTICATION_TYPE_API_KEY;
             }
 
             set

@@ -11,28 +11,28 @@ namespace AfterShipTracking
     /// <summary>
     /// Estimated delivery time of the shipment based on your . It uses the format `YYYY-MM-DD` based on the shipment recipient’s timezone.
     /// </summary>
-    public class  TrackingCustomEstimatedDeliveryDate
+    public class TrackingCustomEstimatedDeliveryDate
     {
         /// <summary>
         ///  Type The format of the EDD. Either a single date or a date range.
         /// </summary>
         [JsonProperty("type")]
-        public TrackingCustomEstimatedDeliveryDateType?  Type { get; set; }
+        public TrackingCustomEstimatedDeliveryDateType? Type { get; set; }
         /// <summary>
         ///  Datetime The specific EDD date.
         /// </summary>
         [JsonProperty("datetime")]
-        public string?  Datetime { get; set; }
+        public string? Datetime { get; set; }
         /// <summary>
         ///  DatetimeMin For a date range EDD format, the date for the lower end of the range.
         /// </summary>
         [JsonProperty("datetime_min")]
-        public string?  DatetimeMin { get; set; }
+        public string? DatetimeMin { get; set; }
         /// <summary>
         ///  DatetimeMax For a date range EDD format, the date for the upper end of the range.
         /// </summary>
         [JsonProperty("datetime_max")]
-        public string?  DatetimeMax { get; set; }
+        public string? DatetimeMax { get; set; }
         public TrackingCustomEstimatedDeliveryDate()
         {
         }

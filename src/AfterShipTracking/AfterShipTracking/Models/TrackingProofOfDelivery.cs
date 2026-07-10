@@ -11,18 +11,18 @@ namespace AfterShipTracking
     /// <summary>
     /// 
     /// </summary>
-    public class  TrackingProofOfDelivery
+    public class TrackingProofOfDelivery
     {
         /// <summary>
         ///  Type The file type of the proof of delivery record. Currently, only images are supported.
         /// </summary>
         [JsonProperty("type")]
-        public string  Type { get; set; }
+        public string Type { get; set; }
         /// <summary>
         ///  Url The URL of the proof of delivery record.
         /// </summary>
         [JsonProperty("url")]
-        public string  Url { get; set; }
+        public string Url { get; set; }
         public TrackingProofOfDelivery()
         {
         }

@@ -11,18 +11,18 @@ namespace AfterShipTracking
     /// <summary>
     /// 
     /// </summary>
-    public class  GetTrackingsResponseData
+    public class GetTrackingsResponseData
     {
         /// <summary>
         ///  Pagination The Pagination holds the information for the pagination when the response contains multiple objects.
         /// </summary>
         [JsonProperty("pagination")]
-        public GetTrackingsResponseDataPagination  Pagination { get; set; }
+        public GetTrackingsResponseDataPagination Pagination { get; set; }
         /// <summary>
         ///  Trackings Array of 
         /// </summary>
         [JsonProperty("trackings")]
-        public Tracking []? Trackings { get; set; }
+        public Tracking[]? Trackings { get; set; }
         public GetTrackingsResponseData()
         {
         }

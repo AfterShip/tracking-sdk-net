@@ -12,7 +12,7 @@ namespace AfterShipTracking
     /// </summary>
     public class GetTrackingsOptions : BaseOptions
     {
-        public  GetTrackingsOptions()
+        public GetTrackingsOptions()
         {
         }
 
@@ -38,58 +38,76 @@ namespace AfterShipTracking
         override public List<KeyValuePair<string, string>> GetQueryParams()
         {
             var p = new List<KeyValuePair<string, string>>();
-            if (Cursor != null) {
+            if (Cursor != null)
+            {
                 p.Add(new KeyValuePair<string, string>("cursor", Cursor));
             }
-            if (Limit != null) {
+            if (Limit != null)
+            {
                 p.Add(new KeyValuePair<string, string>("limit", Limit.ToString()));
             }
-            if (Keyword != null) {
+            if (Keyword != null)
+            {
                 p.Add(new KeyValuePair<string, string>("keyword", Keyword));
             }
-            if (TrackingNumbers != null) {
+            if (TrackingNumbers != null)
+            {
                 p.Add(new KeyValuePair<string, string>("tracking_numbers", TrackingNumbers));
             }
-            if (Slug != null) {
+            if (Slug != null)
+            {
                 p.Add(new KeyValuePair<string, string>("slug", Slug));
             }
-            if (TransitTime != null) {
+            if (TransitTime != null)
+            {
                 p.Add(new KeyValuePair<string, string>("transit_time", TransitTime.ToString()));
             }
-            if (Origin != null) {
+            if (Origin != null)
+            {
                 p.Add(new KeyValuePair<string, string>("origin", Origin));
             }
-            if (Destination != null) {
+            if (Destination != null)
+            {
                 p.Add(new KeyValuePair<string, string>("destination", Destination));
             }
-            if (Tag != null) {
+            if (Tag != null)
+            {
                 p.Add(new KeyValuePair<string, string>("tag", Tag));
             }
-            if (CreatedAtMin != null) {
+            if (CreatedAtMin != null)
+            {
                 p.Add(new KeyValuePair<string, string>("created_at_min", CreatedAtMin));
             }
-            if (CreatedAtMax != null) {
+            if (CreatedAtMax != null)
+            {
                 p.Add(new KeyValuePair<string, string>("created_at_max", CreatedAtMax));
             }
-            if (UpdatedAtMin != null) {
+            if (UpdatedAtMin != null)
+            {
                 p.Add(new KeyValuePair<string, string>("updated_at_min", UpdatedAtMin));
             }
-            if (UpdatedAtMax != null) {
+            if (UpdatedAtMax != null)
+            {
                 p.Add(new KeyValuePair<string, string>("updated_at_max", UpdatedAtMax));
             }
-            if (Fields != null) {
+            if (Fields != null)
+            {
                 p.Add(new KeyValuePair<string, string>("fields", Fields));
             }
-            if (ReturnToSender != null) {
+            if (ReturnToSender != null)
+            {
                 p.Add(new KeyValuePair<string, string>("return_to_sender", ReturnToSender));
             }
-            if (CourierDestinationCountryRegion != null) {
+            if (CourierDestinationCountryRegion != null)
+            {
                 p.Add(new KeyValuePair<string, string>("courier_destination_country_region", CourierDestinationCountryRegion));
             }
-            if (ShipmentTags != null) {
+            if (ShipmentTags != null)
+            {
                 p.Add(new KeyValuePair<string, string>("shipment_tags", ShipmentTags));
             }
-            if (OrderId != null) {
+            if (OrderId != null)
+            {
                 p.Add(new KeyValuePair<string, string>("order_id", OrderId));
             }
             return p;
@@ -100,7 +118,7 @@ namespace AfterShipTracking
     /// </summary>
     public class CreateTrackingOptions : BaseOptions
     {
-        public  CreateTrackingOptions()
+        public CreateTrackingOptions()
         {
         }
 
@@ -111,7 +129,7 @@ namespace AfterShipTracking
         {
             string body = null;
 
-            if ( CreateTrackingRequest != null)
+            if (CreateTrackingRequest != null)
             {
                 body = BaseResourceService.ToJson(CreateTrackingRequest);
             }
@@ -123,7 +141,7 @@ namespace AfterShipTracking
     /// </summary>
     public class GetTrackingByIdOptions : BaseOptions
     {
-        public  GetTrackingByIdOptions()
+        public GetTrackingByIdOptions()
         {
         }
 
@@ -133,10 +151,12 @@ namespace AfterShipTracking
         override public List<KeyValuePair<string, string>> GetQueryParams()
         {
             var p = new List<KeyValuePair<string, string>>();
-            if (Fields != null) {
+            if (Fields != null)
+            {
                 p.Add(new KeyValuePair<string, string>("fields", Fields));
             }
-            if (Lang != null) {
+            if (Lang != null)
+            {
                 p.Add(new KeyValuePair<string, string>("lang", Lang));
             }
             return p;
@@ -147,7 +167,7 @@ namespace AfterShipTracking
     /// </summary>
     public class UpdateTrackingByIdOptions : BaseOptions
     {
-        public  UpdateTrackingByIdOptions()
+        public UpdateTrackingByIdOptions()
         {
         }
 
@@ -158,7 +178,7 @@ namespace AfterShipTracking
         {
             string body = null;
 
-            if ( UpdateTrackingByIdRequest != null)
+            if (UpdateTrackingByIdRequest != null)
             {
                 body = BaseResourceService.ToJson(UpdateTrackingByIdRequest);
             }
@@ -170,7 +190,7 @@ namespace AfterShipTracking
     /// </summary>
     public class DeleteTrackingByIdOptions : BaseOptions
     {
-        public  DeleteTrackingByIdOptions()
+        public DeleteTrackingByIdOptions()
         {
         }
 
@@ -181,7 +201,7 @@ namespace AfterShipTracking
     /// </summary>
     public class RetrackTrackingByIdOptions : BaseOptions
     {
-        public  RetrackTrackingByIdOptions()
+        public RetrackTrackingByIdOptions()
         {
         }
 
@@ -192,7 +212,7 @@ namespace AfterShipTracking
     /// </summary>
     public class MarkTrackingCompletedByIdOptions : BaseOptions
     {
-        public  MarkTrackingCompletedByIdOptions()
+        public MarkTrackingCompletedByIdOptions()
         {
         }
 
@@ -203,7 +223,7 @@ namespace AfterShipTracking
         {
             string body = null;
 
-            if ( MarkTrackingCompletedByIdRequest != null)
+            if (MarkTrackingCompletedByIdRequest != null)
             {
                 body = BaseResourceService.ToJson(MarkTrackingCompletedByIdRequest);
             }

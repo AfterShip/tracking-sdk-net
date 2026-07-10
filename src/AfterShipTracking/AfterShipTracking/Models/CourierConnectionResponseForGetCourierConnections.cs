@@ -11,18 +11,18 @@ namespace AfterShipTracking
     /// <summary>
     /// Courier connection response for getting courier connections
     /// </summary>
-    public class  CourierConnectionResponseForGetCourierConnections
+    public class CourierConnectionResponseForGetCourierConnections
     {
         /// <summary>
         ///  Meta Meta data
         /// </summary>
         [JsonProperty("meta")]
-        public Meta  Meta { get; set; }
+        public Meta Meta { get; set; }
         /// <summary>
         ///  Data 
         /// </summary>
         [JsonProperty("data")]
-        public CourierConnectionResponseForGetCourierConnectionsData  Data { get; set; }
+        public CourierConnectionResponseForGetCourierConnectionsData Data { get; set; }
         public CourierConnectionResponseForGetCourierConnections()
         {
         }

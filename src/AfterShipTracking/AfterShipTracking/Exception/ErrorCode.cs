@@ -66,7 +66,7 @@ namespace AfterShipTracking
             { 504, INTERNAL_ERROR },
         };
 
-        public static AfterShipError GenAPIError(int statusCode, int metaCode, string responseBody = null, string message = null, object responseHeader= null)
+        public static AfterShipError GenAPIError(int statusCode, int metaCode, string responseBody = null, string message = null, object responseHeader = null)
         {
             string errorCode = LocateErrorCode(metaCode, statusCode);
             return GenError(errorCode, statusCode, metaCode, responseBody, message, responseHeader);

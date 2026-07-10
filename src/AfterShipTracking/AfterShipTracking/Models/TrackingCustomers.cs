@@ -11,38 +11,38 @@ namespace AfterShipTracking
     /// <summary>
     /// 
     /// </summary>
-    public class  TrackingCustomers
+    public class TrackingCustomers
     {
         /// <summary>
         ///  Role The  role of the customer, indicating whether the customer is  an individual or a company.
         /// </summary>
         [JsonProperty("role")]
-        public string?  Role { get; set; }
+        public string? Role { get; set; }
         /// <summary>
         ///  Name Customer name associated with the tracking.
         /// </summary>
         [JsonProperty("name")]
-        public string?  Name { get; set; }
+        public string? Name { get; set; }
         /// <summary>
         ///  PhoneNumber The phone number(s) to receive SMS notifications. Phone numbers should begin with a `+` sign and include the area code.
         /// </summary>
         [JsonProperty("phone_number")]
-        public string?  PhoneNumber { get; set; }
+        public string? PhoneNumber { get; set; }
         /// <summary>
         ///  Email Email address(es) to receive email notifications.
         /// </summary>
         [JsonProperty("email")]
-        public string?  Email { get; set; }
+        public string? Email { get; set; }
         /// <summary>
         ///  Language The preferred language of the customer. If you have set up AfterShip notifications in different languages, we use this to send the tracking updates to the customer in their preferred language.
         /// </summary>
         [JsonProperty("language")]
-        public string?  Language { get; set; }
+        public string? Language { get; set; }
         /// <summary>
         ///  Id The customer's identifier on the merchant or platform (for example, Shopify) side.
         /// </summary>
         [JsonProperty("id")]
-        public string?  Id { get; set; }
+        public string? Id { get; set; }
         public TrackingCustomers()
         {
         }

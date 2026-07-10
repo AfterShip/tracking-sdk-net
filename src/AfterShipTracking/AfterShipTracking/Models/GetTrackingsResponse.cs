@@ -8,7 +8,7 @@ using Headers = System.Net.Http.Headers.HttpResponseHeaders;
 
 namespace AfterShipTracking
 {
-    public class  GetTrackingsResponse
+    public class GetTrackingsResponse
     {
         public Headers ResponseHeader { get; set; }
         public GetTrackingsResponseData Data { get; set; }

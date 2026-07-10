@@ -11,33 +11,33 @@ namespace AfterShipTracking
     /// <summary>
     /// The shipment’s original estimated delivery date. It could be provided by the carrier, AfterShip AI, or based on your custom settings. The format of carrier EDDs may differ depending on how the carrier provides it:- YYYY-MM-DD- YYYY-MM-DDTHH:mm:ss- YYYY-MM-DDTHH:mm:ssZ AfterShip AI and custom EDDs always use the format `YYYY-MM-DD`. All EDDs use the shipment recipient’s timezone.
     /// </summary>
-    public class  TrackingFirstEstimatedDelivery
+    public class TrackingFirstEstimatedDelivery
     {
         /// <summary>
         ///  Type The format of the EDD. Either a single date or a date range.
         /// </summary>
         [JsonProperty("type")]
-        public TrackingFirstEstimatedDeliveryType?  Type { get; set; }
+        public TrackingFirstEstimatedDeliveryType? Type { get; set; }
         /// <summary>
         ///  Source The source of the EDD. Either the carrier, AfterShip AI, or based on your custom EDD settings.
         /// </summary>
         [JsonProperty("source")]
-        public TrackingFirstEstimatedDeliverySource?  Source { get; set; }
+        public TrackingFirstEstimatedDeliverySource? Source { get; set; }
         /// <summary>
         ///  Datetime The latest EDD time.
         /// </summary>
         [JsonProperty("datetime")]
-        public string?  Datetime { get; set; }
+        public string? Datetime { get; set; }
         /// <summary>
         ///  DatetimeMin For a date range EDD format, the date and time for the lower end of the range.
         /// </summary>
         [JsonProperty("datetime_min")]
-        public string?  DatetimeMin { get; set; }
+        public string? DatetimeMin { get; set; }
         /// <summary>
         ///  DatetimeMax For a date range EDD format, the date and time for the upper end of the range.
         /// </summary>
         [JsonProperty("datetime_max")]
-        public string?  DatetimeMax { get; set; }
+        public string? DatetimeMax { get; set; }
         public TrackingFirstEstimatedDelivery()
         {
         }
