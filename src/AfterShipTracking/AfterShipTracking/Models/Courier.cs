@@ -11,63 +11,63 @@ namespace AfterShipTracking
     /// <summary>
     /// Courier object
     /// </summary>
-    public class  Courier
+    public class Courier
     {
         /// <summary>
         ///  Slug Unique code of courier. Get the slugs from .
         /// </summary>
         [JsonProperty("slug")]
-        public string  Slug { get; set; }
+        public string Slug { get; set; }
         /// <summary>
         ///  Name Name of courier
         /// </summary>
         [JsonProperty("name")]
-        public string  Name { get; set; }
+        public string Name { get; set; }
         /// <summary>
         ///  Phone Contact phone number of courier
         /// </summary>
         [JsonProperty("phone")]
-        public string?  Phone { get; set; }
+        public string? Phone { get; set; }
         /// <summary>
         ///  OtherName Other name of courier
         /// </summary>
         [JsonProperty("other_name")]
-        public string?  OtherName { get; set; }
+        public string? OtherName { get; set; }
         /// <summary>
         ///  WebUrl Website link of courier
         /// </summary>
         [JsonProperty("web_url")]
-        public string?  WebUrl { get; set; }
+        public string? WebUrl { get; set; }
         /// <summary>
         ///  RequiredFields The extra fields need for tracking, such as `tracking_account_number`, `tracking_postal_code`, `tracking_ship_date`, `tracking_key`, `tracking_destination_country_region`
         /// </summary>
         [JsonProperty("required_fields")]
-        public AdditionalFields []? RequiredFields { get; set; }
+        public AdditionalFields[]? RequiredFields { get; set; }
         /// <summary>
         ///  OptionalFields The extra fields which are optional for tracking. Basically it's the same as required_fields, but the difference is that only some of the tracking numbers require these fields.
         /// </summary>
         [JsonProperty("optional_fields")]
-        public AdditionalFields []? OptionalFields { get; set; }
+        public AdditionalFields[]? OptionalFields { get; set; }
         /// <summary>
         ///  DefaultLanguage Default language of tracking results
         /// </summary>
         [JsonProperty("default_language")]
-        public string?  DefaultLanguage { get; set; }
+        public string? DefaultLanguage { get; set; }
         /// <summary>
         ///  SupportLanguages Other supported languages
         /// </summary>
         [JsonProperty("support_languages")]
-        public string []? SupportLanguages { get; set; }
+        public string[]? SupportLanguages { get; set; }
         /// <summary>
         ///  ServiceFromCountryRegions Country/Region code (ISO Alpha-3) where the courier provides service
         /// </summary>
         [JsonProperty("service_from_country_regions")]
-        public string []? ServiceFromCountryRegions { get; set; }
+        public string[]? ServiceFromCountryRegions { get; set; }
         /// <summary>
         ///  Credentials Refers to the authentication details required for each specific carrier (such as API keys, username, password, etc.) that the user must provide to create a carrier connection. The content varies by carrier.
         /// </summary>
         [JsonProperty("credentials")]
-        public CourierCredentials  Credentials { get; set; }
+        public CourierCredentials Credentials { get; set; }
         public Courier()
         {
         }

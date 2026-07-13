@@ -11,23 +11,23 @@ namespace AfterShipTracking
     /// <summary>
     /// The Pagination holds the information for the pagination when the response contains multiple objects.
     /// </summary>
-    public class  TrackingResponseForGetTrackingsDataPagination
+    public class TrackingResponseForGetTrackingsDataPagination
     {
         /// <summary>
         ///  Total The total number of trackings.
         /// </summary>
         [JsonProperty("total")]
-        public int  Total { get; set; }
+        public int Total { get; set; }
         /// <summary>
         ///  NextCursor A string representing the cursor value for the next page of results.
         /// </summary>
         [JsonProperty("next_cursor")]
-        public string  NextCursor { get; set; }
+        public string NextCursor { get; set; }
         /// <summary>
         ///  HasNextPage To indicate if next page is available.
         /// </summary>
         [JsonProperty("has_next_page")]
-        public bool  HasNextPage { get; set; }
+        public bool HasNextPage { get; set; }
         public TrackingResponseForGetTrackingsDataPagination()
         {
         }

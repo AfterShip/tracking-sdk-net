@@ -11,18 +11,18 @@ namespace AfterShipTracking
     /// <summary>
     /// Tracking response for getting tracking
     /// </summary>
-    public class  TrackingResponseForGetTrackings
+    public class TrackingResponseForGetTrackings
     {
         /// <summary>
         ///  Meta Meta data
         /// </summary>
         [JsonProperty("meta")]
-        public Meta  Meta { get; set; }
+        public Meta Meta { get; set; }
         /// <summary>
         ///  Data 
         /// </summary>
         [JsonProperty("data")]
-        public TrackingResponseForGetTrackingsData  Data { get; set; }
+        public TrackingResponseForGetTrackingsData Data { get; set; }
         public TrackingResponseForGetTrackings()
         {
         }

@@ -11,18 +11,18 @@ namespace AfterShipTracking
     /// <summary>
     /// Model of all couriers endpoint response
     /// </summary>
-    public class  CourierResponse
+    public class CourierResponse
     {
         /// <summary>
         ///  Meta Meta data
         /// </summary>
         [JsonProperty("meta")]
-        public Meta  Meta { get; set; }
+        public Meta Meta { get; set; }
         /// <summary>
         ///  Data 
         /// </summary>
         [JsonProperty("data")]
-        public CourierResponseData  Data { get; set; }
+        public CourierResponseData Data { get; set; }
         public CourierResponse()
         {
         }

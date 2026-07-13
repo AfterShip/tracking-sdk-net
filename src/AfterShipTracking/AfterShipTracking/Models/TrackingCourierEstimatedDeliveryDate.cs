@@ -11,23 +11,23 @@ namespace AfterShipTracking
     /// <summary>
     /// The field contains the estimated delivery date provided by the carrier.
     /// </summary>
-    public class  TrackingCourierEstimatedDeliveryDate
+    public class TrackingCourierEstimatedDeliveryDate
     {
         /// <summary>
         ///  EstimatedDeliveryDate The estimated arrival date of the shipment. It reflects the shipment recipient’s timezone and the format may vary based on how the carrier provides it:- YYYY-MM-DD- YYYY-MM-DDTHH:mm:ss- YYYY-MM-DDTHH:mm:ssZ
         /// </summary>
         [JsonProperty("estimated_delivery_date")]
-        public string?  EstimatedDeliveryDate { get; set; }
+        public string? EstimatedDeliveryDate { get; set; }
         /// <summary>
         ///  EstimatedDeliveryDateMin The earliest estimated delivery date of the shipment. It reflects the shipment recipient’s timezone and the format may vary based on how the carrier provides it:- YYYY-MM-DD- YYYY-MM-DDTHH:mm:ss- YYYY-MM-DDTHH:mm:ssZ
         /// </summary>
         [JsonProperty("estimated_delivery_date_min")]
-        public string?  EstimatedDeliveryDateMin { get; set; }
+        public string? EstimatedDeliveryDateMin { get; set; }
         /// <summary>
         ///  EstimatedDeliveryDateMax The Latest estimated delivery date of the shipment. It reflects the shipment recipient’s timezone and the format may vary based on how the carrier provides it:- YYYY-MM-DD- YYYY-MM-DDTHH:mm:ss- YYYY-MM-DDTHH:mm:ssZ
         /// </summary>
         [JsonProperty("estimated_delivery_date_max")]
-        public string?  EstimatedDeliveryDateMax { get; set; }
+        public string? EstimatedDeliveryDateMax { get; set; }
         public TrackingCourierEstimatedDeliveryDate()
         {
         }

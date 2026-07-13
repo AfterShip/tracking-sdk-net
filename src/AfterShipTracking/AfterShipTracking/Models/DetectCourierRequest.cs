@@ -11,58 +11,58 @@ namespace AfterShipTracking
     /// <summary>
     /// 
     /// </summary>
-    public class  DetectCourierRequest
+    public class DetectCourierRequest
     {
         /// <summary>
         ///  TrackingNumber Tracking number of a shipment.
         /// </summary>
         [JsonProperty("tracking_number")]
-        public string  TrackingNumber { get; set; }
+        public string TrackingNumber { get; set; }
         /// <summary>
         ///  Slug If not specified, Aftership will automatically detect the courier based on the tracking number format and your . Use array to input a list of couriers for auto detect. Cannot be used with slug_group at the same time.
         /// </summary>
         [JsonProperty("slug")]
-        public string []? Slug { get; set; }
+        public string[]? Slug { get; set; }
         /// <summary>
         ///  DestinationPostalCode The postal code of receiver's address. Required by some couriers. Refer to  for more details
         /// </summary>
         [JsonProperty("destination_postal_code")]
-        public string  DestinationPostalCode { get; set; }
+        public string DestinationPostalCode { get; set; }
         /// <summary>
         ///  TrackingShipDate Shipping date in `YYYYMMDD` format. Required by some couriers. Refer to  for more details
         /// </summary>
         [JsonProperty("tracking_ship_date")]
-        public string  TrackingShipDate { get; set; }
+        public string TrackingShipDate { get; set; }
         /// <summary>
         ///  TrackingAccountNumber Account number of the shipper for a specific courier. Required by some couriers. Refer to  for more details
         /// </summary>
         [JsonProperty("tracking_account_number")]
-        public string  TrackingAccountNumber { get; set; }
+        public string TrackingAccountNumber { get; set; }
         /// <summary>
         ///  TrackingKey Key of the shipment for a specific courier. Required by some couriers. Refer to  for more details
         /// </summary>
         [JsonProperty("tracking_key")]
-        public string  TrackingKey { get; set; }
+        public string TrackingKey { get; set; }
         /// <summary>
         ///  DestinationState State of the destination shipping address of the shipment. Required by some couriers.
         /// </summary>
         [JsonProperty("destination_state")]
-        public string  DestinationState { get; set; }
+        public string DestinationState { get; set; }
         /// <summary>
         ///  SlugGroup Slug group is a group of slugs which belong to same courier. For example, when you inpit "fedex-group" as slug_group, AfterShip will detect the tracking with "fedex-uk", "fedex-fims", and other slugs which belong to "fedex". It cannot be used with slug at the same time. (
         /// </summary>
         [JsonProperty("slug_group")]
-        public string  SlugGroup { get; set; }
+        public string SlugGroup { get; set; }
         /// <summary>
         ///  OriginCountryRegion Enter .
         /// </summary>
         [JsonProperty("origin_country_region")]
-        public string  OriginCountryRegion { get; set; }
+        public string OriginCountryRegion { get; set; }
         /// <summary>
         ///  DestinationCountryRegion Enter .
         /// </summary>
         [JsonProperty("destination_country_region")]
-        public string  DestinationCountryRegion { get; set; }
+        public string DestinationCountryRegion { get; set; }
         public DetectCourierRequest()
         {
         }

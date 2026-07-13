@@ -11,38 +11,38 @@ namespace AfterShipTracking
     /// <summary>
     /// This field contains information about the last leg of the shipment, starting from the carrier who hands it over to the last-mile carrier, all the way to delivery. Once AfterShip detects that the shipment involves multiple legs and identifies the last-mile carrier, we will populate the last-mile carrier information in this object. Alternatively, the user can provide this information in this field to specify the last-mile carrier, which is helpful if AfterShip is unable to detect it automatically.
     /// </summary>
-    public class  TrackingLastMile
+    public class TrackingLastMile
     {
         /// <summary>
         ///  TrackingNumber The tracking number of the last-mile carrier.
         /// </summary>
         [JsonProperty("tracking_number")]
-        public string  TrackingNumber { get; set; }
+        public string TrackingNumber { get; set; }
         /// <summary>
         ///  Slug The unique code of the carrier responsible for the last-mile of the shipment.  Find all the courier slugs .
         /// </summary>
         [JsonProperty("slug")]
-        public string  Slug { get; set; }
+        public string Slug { get; set; }
         /// <summary>
         ///  TransitTime The transit time for the last-mile of a shipment in days. This field is calculated based on whether the handed_over_to_last_mile_carrier or the received_by_last_mile_carrier event is detected by AfterShip. The handover event date is used to calculate the last-mile transit time.- Last mile transit time (in days)= Delivered date - Handover date
         /// </summary>
         [JsonProperty("transit_time")]
-        public int?  TransitTime { get; set; }
+        public int? TransitTime { get; set; }
         /// <summary>
         ///  CourierTrackingLink The field contains the official tracking URL of the last-mile carrier, if available. The language parameter of this link is determined by the destination country/region and the language associated with the shipment. If the destination country/region and language data is unavailable, AfterShip will default the language parameter to "US".
         /// </summary>
         [JsonProperty("courier_tracking_link")]
-        public string?  CourierTrackingLink { get; set; }
+        public string? CourierTrackingLink { get; set; }
         /// <summary>
         ///  CourierRedirectLink The field provides the link for modifying delivery instructions (such as delivery date and shipping address), if supported by the last-mile carrier. The language parameter of this link is determined by the destination country/region and the language associated with the shipment. If the destination country/region and language data is unavailable, AfterShip will default the language parameter to "US".
         /// </summary>
         [JsonProperty("courier_redirect_link")]
-        public string?  CourierRedirectLink { get; set; }
+        public string? CourierRedirectLink { get; set; }
         /// <summary>
         ///  Source The field indicates the source of last-mile carrier.
         /// </summary>
         [JsonProperty("source")]
-        public TrackingLastMileSource?  Source { get; set; }
+        public TrackingLastMileSource? Source { get; set; }
         public TrackingLastMile()
         {
         }

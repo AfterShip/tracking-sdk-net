@@ -12,7 +12,7 @@ namespace AfterShipTracking
     /// </summary>
     public class GetCourierConnectionsOptions : BaseOptions
     {
-        public  GetCourierConnectionsOptions()
+        public GetCourierConnectionsOptions()
         {
         }
 
@@ -23,13 +23,16 @@ namespace AfterShipTracking
         override public List<KeyValuePair<string, string>> GetQueryParams()
         {
             var p = new List<KeyValuePair<string, string>>();
-            if (CourierSlug != null) {
+            if (CourierSlug != null)
+            {
                 p.Add(new KeyValuePair<string, string>("courier_slug", CourierSlug));
             }
-            if (Cursor != null) {
+            if (Cursor != null)
+            {
                 p.Add(new KeyValuePair<string, string>("cursor", Cursor));
             }
-            if (Limit != null) {
+            if (Limit != null)
+            {
                 p.Add(new KeyValuePair<string, string>("limit", Limit));
             }
             return p;
@@ -40,7 +43,7 @@ namespace AfterShipTracking
     /// </summary>
     public class PostCourierConnectionsOptions : BaseOptions
     {
-        public  PostCourierConnectionsOptions()
+        public PostCourierConnectionsOptions()
         {
         }
 
@@ -51,7 +54,7 @@ namespace AfterShipTracking
         {
             string body = null;
 
-            if ( PostCourierConnectionsRequest != null)
+            if (PostCourierConnectionsRequest != null)
             {
                 body = BaseResourceService.ToJson(PostCourierConnectionsRequest);
             }
@@ -63,7 +66,7 @@ namespace AfterShipTracking
     /// </summary>
     public class GetCourierConnectionsByIdOptions : BaseOptions
     {
-        public  GetCourierConnectionsByIdOptions()
+        public GetCourierConnectionsByIdOptions()
         {
         }
 
@@ -74,7 +77,7 @@ namespace AfterShipTracking
     /// </summary>
     public class PutCourierConnectionsByIdOptions : BaseOptions
     {
-        public  PutCourierConnectionsByIdOptions()
+        public PutCourierConnectionsByIdOptions()
         {
         }
 
@@ -85,7 +88,7 @@ namespace AfterShipTracking
         {
             string body = null;
 
-            if ( PutCourierConnectionsByIdRequest != null)
+            if (PutCourierConnectionsByIdRequest != null)
             {
                 body = BaseResourceService.ToJson(PutCourierConnectionsByIdRequest);
             }
@@ -97,7 +100,7 @@ namespace AfterShipTracking
     /// </summary>
     public class DeleteCourierConnectionsByIdOptions : BaseOptions
     {
-        public  DeleteCourierConnectionsByIdOptions()
+        public DeleteCourierConnectionsByIdOptions()
         {
         }
 

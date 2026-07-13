@@ -11,18 +11,18 @@ namespace AfterShipTracking
     /// <summary>
     /// The shipment_weight field represents the total weight of the shipment. In scenarios where the carrier does not provide this information, you can provide the weight to AfterShip. We will prioritize the data provided by the carrier, if available. The shipment weight will be included in the Response and accessed through the GET API, Webhook, and CSV export. It will also be displayed on the AfterShip Tracking admin. Additionally, it plays a significant role in error-free shipment handling and carbon emission calculations, ensuring accurate and informed decision-making
     /// </summary>
-    public class  TrackingShipmentWeight
+    public class TrackingShipmentWeight
     {
         /// <summary>
         ///  Unit The unit in which the value field is expressed.
         /// </summary>
         [JsonProperty("unit")]
-        public string  Unit { get; set; }
+        public string Unit { get; set; }
         /// <summary>
         ///  Value The total amount of shipment weight.
         /// </summary>
         [JsonProperty("value")]
-        public double  Value { get; set; }
+        public double Value { get; set; }
         public TrackingShipmentWeight()
         {
         }

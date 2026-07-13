@@ -11,18 +11,18 @@ namespace AfterShipTracking
     /// <summary>
     /// 
     /// </summary>
-    public class  EstimatedDeliveryDateResponseEstimatedPickupOrderProcessingTime
+    public class EstimatedDeliveryDateResponseEstimatedPickupOrderProcessingTime
     {
         /// <summary>
         ///  Unit Processing time of an order, from being placed to being picked up. Only support day as value now.AfterShip will set day as the default value.
         /// </summary>
         [JsonProperty("unit")]
-        public string  Unit { get; set; }
+        public string Unit { get; set; }
         /// <summary>
         ///  Value Processing time of an order, from being placed to being picked up.AfterShip will set 0 as the default value.
         /// </summary>
         [JsonProperty("value")]
-        public double  Value { get; set; }
+        public double Value { get; set; }
         public EstimatedDeliveryDateResponseEstimatedPickupOrderProcessingTime()
         {
         }

@@ -11,93 +11,98 @@ namespace AfterShipTracking
     /// <summary>
     /// Object describes checkpoint information.
     /// </summary>
-    public class  Checkpoint
+    public class Checkpoint
     {
         /// <summary>
         ///  CreatedAt The date and time of the checkpoint event was added to AfterShip. It uses the format `YYYY-MM-DDTHH:mm:ssZ` for the timezone GMT +0.
         /// </summary>
         [JsonProperty("created_at")]
-        public string  CreatedAt { get; set; }
+        public string CreatedAt { get; set; }
         /// <summary>
         ///  Slug The unique code of courier for this checkpoint. Get courier slug 
         /// </summary>
         [JsonProperty("slug")]
-        public string  Slug { get; set; }
+        public string Slug { get; set; }
         /// <summary>
         ///  CheckpointTime The date and time of the checkpoint event, provided by the carrier. It uses the timezone of the checkpoint. The format may differ depending on how the carrier provides it:- YYYY-MM-DDTHH:mm:ss- YYYY-MM-DDTHH:mm:ssZ
         /// </summary>
         [JsonProperty("checkpoint_time")]
-        public string  CheckpointTime { get; set; }
+        public string CheckpointTime { get; set; }
         /// <summary>
         ///  Location Location info provided by carrier
         /// </summary>
         [JsonProperty("location")]
-        public string?  Location { get; set; }
+        public string? Location { get; set; }
         /// <summary>
         ///  City City info provided by carrier
         /// </summary>
         [JsonProperty("city")]
-        public string?  City { get; set; }
+        public string? City { get; set; }
         /// <summary>
         ///  State State info provided by carrier
         /// </summary>
         [JsonProperty("state")]
-        public string?  State { get; set; }
+        public string? State { get; set; }
         /// <summary>
         ///  PostalCode Postal code info provided by carrier
         /// </summary>
         [JsonProperty("postal_code")]
-        public string?  PostalCode { get; set; }
+        public string? PostalCode { get; set; }
         /// <summary>
         ///  Coordinate The latitude and longitude coordinates indicate the precise location of the shipments that are currently in transit.
         /// </summary>
         [JsonProperty("coordinate")]
-        public CheckpointCoordinate?  Coordinate { get; set; }
+        public CheckpointCoordinate? Coordinate { get; set; }
         /// <summary>
         ///  CountryRegion Country/Region ISO Alpha-3 (three letters) of the checkpoint
         /// </summary>
         [JsonProperty("country_region")]
-        public string?  CountryRegion { get; set; }
+        public string? CountryRegion { get; set; }
         /// <summary>
         ///  CountryRegionName Country/Region name of the checkpoint, may also contain other location info.
         /// </summary>
         [JsonProperty("country_region_name")]
-        public string?  CountryRegionName { get; set; }
+        public string? CountryRegionName { get; set; }
         /// <summary>
         ///  Message Checkpoint message
         /// </summary>
         [JsonProperty("message")]
-        public string  Message { get; set; }
+        public string Message { get; set; }
         /// <summary>
         ///  Tag Current status of tracking. (
         /// </summary>
         [JsonProperty("tag")]
-        public Tag?  Tag { get; set; }
+        public Tag? Tag { get; set; }
         /// <summary>
         ///  Subtag Current subtag of checkpoint. (
         /// </summary>
         [JsonProperty("subtag")]
-        public string  Subtag { get; set; }
+        public string Subtag { get; set; }
         /// <summary>
         ///  SubtagMessage Normalized checkpoint message. (
         /// </summary>
         [JsonProperty("subtag_message")]
-        public string  SubtagMessage { get; set; }
+        public string SubtagMessage { get; set; }
         /// <summary>
         ///  RawTag Checkpoint raw status provided by courier
         /// </summary>
         [JsonProperty("raw_tag")]
-        public string?  RawTag { get; set; }
+        public string? RawTag { get; set; }
         /// <summary>
         ///  Events The array provides details about specific event(s) that occurred  to a shipment, such as "returned_to_sender". You can find the full list of events and reasons </span>- The events' value for the same checkpoint message is subject to change as we consistently strive to enhance the performance of this feature.
         /// </summary>
         [JsonProperty("events")]
-        public CheckpointEvents []? Events { get; set; }
+        public CheckpointEvents[]? Events { get; set; }
         /// <summary>
         ///  Source The source of the checkpoint, which can either be from the carrier or when the user marks the tracking as completed.
         /// </summary>
         [JsonProperty("source")]
-        public CheckpointSource?  Source { get; set; }
+        public CheckpointSource? Source { get; set; }
+        /// <summary>
+        ///  Hash Unique hash identifier for each checkpoint event, could be used for deduplication.
+        /// </summary>
+        [JsonProperty("hash")]
+        public string Hash { get; set; }
         public Checkpoint()
         {
         }

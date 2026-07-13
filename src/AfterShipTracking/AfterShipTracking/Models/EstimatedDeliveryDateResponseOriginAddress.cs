@@ -11,33 +11,33 @@ namespace AfterShipTracking
     /// <summary>
     /// The location from where the package is picked up by the carrier to be delivered to the final destination.
     /// </summary>
-    public class  EstimatedDeliveryDateResponseOriginAddress
+    public class EstimatedDeliveryDateResponseOriginAddress
     {
         /// <summary>
         ///  CountryRegion The country/region of the origin location from where the package is picked up by the carrier to be delivered to the final destination. Use 3 letters of ISO 3166-1 country/region code.
         /// </summary>
         [JsonProperty("country_region")]
-        public string  CountryRegion { get; set; }
+        public string CountryRegion { get; set; }
         /// <summary>
         ///  State State, province, or the equivalent location of the origin address. Use 3 letters of ISO 3166-1 country/region code for countries/regions without state. Either `origin_address.state` or `origin_address.postal_code` is required.
         /// </summary>
         [JsonProperty("state")]
-        public string?  State { get; set; }
+        public string? State { get; set; }
         /// <summary>
         ///  City City of the origin address. Use 3 letters of ISO 3166-1 country/region code for countries/regions without City.
         /// </summary>
         [JsonProperty("city")]
-        public string?  City { get; set; }
+        public string? City { get; set; }
         /// <summary>
         ///  PostalCode Postal code of the origin address. Use 3 letters of ISO 3166-1 country/region code for countries/regions without postal code. Either `origin_address.state` or `origin_address.postal_code` is required.
         /// </summary>
         [JsonProperty("postal_code")]
-        public string?  PostalCode { get; set; }
+        public string? PostalCode { get; set; }
         /// <summary>
         ///  RawLocation Raw location of the origin address. A raw address will help AI to identify the accurate location of the origin address.
         /// </summary>
         [JsonProperty("raw_location")]
-        public string?  RawLocation { get; set; }
+        public string? RawLocation { get; set; }
         public EstimatedDeliveryDateResponseOriginAddress()
         {
         }

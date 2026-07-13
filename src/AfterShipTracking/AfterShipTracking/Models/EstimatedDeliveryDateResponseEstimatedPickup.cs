@@ -11,33 +11,33 @@ namespace AfterShipTracking
     /// <summary>
     /// The local pickup time of the package.Either `pickup_time` or `estimated_pickup` is required.
     /// </summary>
-    public class  EstimatedDeliveryDateResponseEstimatedPickup
+    public class EstimatedDeliveryDateResponseEstimatedPickup
     {
         /// <summary>
         ///  OrderTime The local order time in the origin address time zone of the package.
         /// </summary>
         [JsonProperty("order_time")]
-        public string  OrderTime { get; set; }
+        public string OrderTime { get; set; }
         /// <summary>
         ///  OrderCutoffTime Order cut off time in the origin address time zone. The default value set by AfterShip is 18:00:00.
         /// </summary>
         [JsonProperty("order_cutoff_time")]
-        public string?  OrderCutoffTime { get; set; }
+        public string? OrderCutoffTime { get; set; }
         /// <summary>
         ///  BusinessDays Operating days in a week. Number refers to the weekday.E.g., [1,2,3,4,5] means operating days are from Monday to Friday.AfterShip will set [1,2,3,4,5] as the default value.
         /// </summary>
         [JsonProperty("business_days")]
-        public int []? BusinessDays { get; set; }
+        public int[]? BusinessDays { get; set; }
         /// <summary>
         ///  OrderProcessingTime 
         /// </summary>
         [JsonProperty("order_processing_time")]
-        public EstimatedDeliveryDateResponseEstimatedPickupOrderProcessingTime?  OrderProcessingTime { get; set; }
+        public EstimatedDeliveryDateResponseEstimatedPickupOrderProcessingTime? OrderProcessingTime { get; set; }
         /// <summary>
         ///  PickupTime The local pickup time of the package. 
         /// </summary>
         [JsonProperty("pickup_time")]
-        public string?  PickupTime { get; set; }
+        public string? PickupTime { get; set; }
         public EstimatedDeliveryDateResponseEstimatedPickup()
         {
         }

@@ -11,23 +11,23 @@ namespace AfterShipTracking
     /// <summary>
     /// Meta data
     /// </summary>
-    public class  Meta
+    public class Meta
     {
         /// <summary>
         ///  Code meta code
         /// </summary>
         [JsonProperty("code")]
-        public int  Code { get; set; }
+        public int Code { get; set; }
         /// <summary>
         ///  Message error message, only exist if the response status is not 2xx
         /// </summary>
         [JsonProperty("message")]
-        public string  Message { get; set; }
+        public string Message { get; set; }
         /// <summary>
         ///  Type error type, only exist if the response status is not 2xx
         /// </summary>
         [JsonProperty("type")]
-        public MetaType?  Type { get; set; }
+        public MetaType? Type { get; set; }
         public Meta()
         {
         }

@@ -11,18 +11,18 @@ namespace AfterShipTracking
     /// <summary>
     /// 
     /// </summary>
-    public class  GetCouriersResponseData
+    public class GetCouriersResponseData
     {
         /// <summary>
         ///  Total Total count of courier objects
         /// </summary>
         [JsonProperty("total")]
-        public int  Total { get; set; }
+        public int Total { get; set; }
         /// <summary>
         ///  Couriers Array of  object.
         /// </summary>
         [JsonProperty("couriers")]
-        public Courier []? Couriers { get; set; }
+        public Courier[]? Couriers { get; set; }
         public GetCouriersResponseData()
         {
         }

@@ -127,9 +127,10 @@ namespace AfterShipTracking
         /// with default parameters.
         /// </summary>
         /// <returns>The new instance of the <see cref="System.Net.Http.HttpClient"/> class.</returns>
-        public static HttpClient BuildSystemNetHttpClient(int timeoutMs= DefaultTimeout, string proxyUrl = null)
+        public static HttpClient BuildSystemNetHttpClient(int timeoutMs = DefaultTimeout, string proxyUrl = null)
         {
-            if (timeoutMs <=0) {
+            if (timeoutMs <= 0)
+            {
                 timeoutMs = DefaultTimeout;
             }
             TimeSpan timeout = TimeSpan.FromMilliseconds(timeoutMs);
@@ -205,7 +206,7 @@ namespace AfterShipTracking
             while (true)
             {
                 requestException = null;
-                 if (retry > this.MaxNetworkRetries)
+                if (retry > this.MaxNetworkRetries)
                 {
                     requestException = ErrorCode.GenSDKError(ErrorCode.TIMED_OUT, "Request timed out.");
                     break;
@@ -341,7 +342,7 @@ namespace AfterShipTracking
 
         public Dictionary<string, string> BuildDefaultHeader(string userAgent)
         {
-            userAgent = string.IsNullOrEmpty(userAgent) ?  AfterShipConfiguration.DEFAULT_USER_AGENT: userAgent;
+            userAgent = string.IsNullOrEmpty(userAgent) ? AfterShipConfiguration.DEFAULT_USER_AGENT : userAgent;
             Dictionary<string, string> headers = new();
             headers.Add("content-type", "application/json");
             headers.Add("date", DateTime.UtcNow.ToString("r"));

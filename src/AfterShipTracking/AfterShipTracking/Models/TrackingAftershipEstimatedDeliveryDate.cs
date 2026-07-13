@@ -11,28 +11,28 @@ namespace AfterShipTracking
     /// <summary>
     /// The estimated delivery date of the shipment provided by AfterShip’s AI and shown to the recipients. It uses the format `YYYY-MM-DD` based on the shipment recipient’s timezone.
     /// </summary>
-    public class  TrackingAftershipEstimatedDeliveryDate
+    public class TrackingAftershipEstimatedDeliveryDate
     {
         /// <summary>
         ///  EstimatedDeliveryDate The estimated arrival date of the shipment.
         /// </summary>
         [JsonProperty("estimated_delivery_date")]
-        public string  EstimatedDeliveryDate { get; set; }
+        public string EstimatedDeliveryDate { get; set; }
         /// <summary>
         ///  ConfidenceCode Indicates the confidence level and associated reason for an AI EDD prediction request. For a comprehensive list of confidence codes, refer to .
         /// </summary>
         [JsonProperty("confidence_code")]
-        public double  ConfidenceCode { get; set; }
+        public double ConfidenceCode { get; set; }
         /// <summary>
         ///  EstimatedDeliveryDateMin Earliest estimated delivery date of the shipment.
         /// </summary>
         [JsonProperty("estimated_delivery_date_min")]
-        public string  EstimatedDeliveryDateMin { get; set; }
+        public string EstimatedDeliveryDateMin { get; set; }
         /// <summary>
         ///  EstimatedDeliveryDateMax Latest estimated delivery date of the shipment.
         /// </summary>
         [JsonProperty("estimated_delivery_date_max")]
-        public string  EstimatedDeliveryDateMax { get; set; }
+        public string EstimatedDeliveryDateMax { get; set; }
         public TrackingAftershipEstimatedDeliveryDate()
         {
         }

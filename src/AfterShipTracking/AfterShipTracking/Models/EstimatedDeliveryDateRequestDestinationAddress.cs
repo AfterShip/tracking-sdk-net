@@ -11,33 +11,33 @@ namespace AfterShipTracking
     /// <summary>
     /// The final destination of the customer where the delivery will be made.
     /// </summary>
-    public class  EstimatedDeliveryDateRequestDestinationAddress
+    public class EstimatedDeliveryDateRequestDestinationAddress
     {
         /// <summary>
         ///  CountryRegion The country/region of the destination location where the package will be delivered. Use 3 letters of ISO 3166-1 country code.
         /// </summary>
         [JsonProperty("country_region")]
-        public string  CountryRegion { get; set; }
+        public string CountryRegion { get; set; }
         /// <summary>
-        ///  State State, province, or the equivalent location of the destination address where the package will be delivered.Either `destination_address.state` or `destination_address.postal_code` is required.
+        ///  State State, province, or the equivalent location of the destination address where the package will be delivered.</br><span style=color:#ff6b2b;padding:2px>**Either `destination_address.state` or `destination_address.postal_code` is required.**</span>
         /// </summary>
         [JsonProperty("state")]
-        public string?  State { get; set; }
+        public string? State { get; set; }
         /// <summary>
         ///  City City of the destination address where the package will be delivered.
         /// </summary>
         [JsonProperty("city")]
-        public string?  City { get; set; }
+        public string? City { get; set; }
         /// <summary>
-        ///  PostalCode Postal code of the destination address.Either `destination_address.state` or `destination_address.postal_code` is required.
+        ///  PostalCode Postal code of the destination address.</br><span style=color:#ff6b2b;padding:2px>**Either `destination_address.state` or `destination_address.postal_code` is required.**</span>
         /// </summary>
         [JsonProperty("postal_code")]
-        public string?  PostalCode { get; set; }
+        public string? PostalCode { get; set; }
         /// <summary>
         ///  RawLocation Raw location of the destination address. A raw address will help AI to identify the accurate location of the destination address.
         /// </summary>
         [JsonProperty("raw_location")]
-        public string?  RawLocation { get; set; }
+        public string? RawLocation { get; set; }
         public EstimatedDeliveryDateRequestDestinationAddress()
         {
         }

@@ -16,9 +16,9 @@ namespace AfterShipTracking
             this.HttpClient = httpClient;
         }
 
-        public GetCourierConnectionsResponse GetCourierConnections( GetCourierConnectionsOptions? options = null)
+        public GetCourierConnectionsResponse GetCourierConnections(GetCourierConnectionsOptions? options = null)
         {
-            string path = $"/tracking/2026-01/courier-connections";
+            string path = $"/tracking/2026-07/courier-connections";
             Request request = new Request(
                 HttpMethod.Get,
                 path,
@@ -34,9 +34,9 @@ namespace AfterShipTracking
 
             return result;
         }
-        public PostCourierConnectionsResponse PostCourierConnections( PostCourierConnectionsOptions? options = null)
+        public PostCourierConnectionsResponse PostCourierConnections(PostCourierConnectionsOptions? options = null)
         {
-            string path = $"/tracking/2026-01/courier-connections";
+            string path = $"/tracking/2026-07/courier-connections";
             Request request = new Request(
                 HttpMethod.Post,
                 path,
@@ -52,12 +52,12 @@ namespace AfterShipTracking
 
             return result;
         }
-        public GetCourierConnectionsByIdResponse GetCourierConnectionsById(string id,  GetCourierConnectionsByIdOptions? options = null)
+        public GetCourierConnectionsByIdResponse GetCourierConnectionsById(string id, GetCourierConnectionsByIdOptions? options = null)
         {
-            string path = $"/tracking/2026-01/courier-connections/{id}";
+            string path = $"/tracking/2026-07/courier-connections/{id}";
             if (string.IsNullOrEmpty(id))
             {
-               throw ErrorCode.GenSDKError(ErrorCode.BAD_REQUEST, "Invalid request"+": `id` is invalid");
+                throw ErrorCode.GenSDKError(ErrorCode.BAD_REQUEST, "Invalid request" + ": `id` is invalid");
             }
             Request request = new Request(
                 HttpMethod.Get,
@@ -74,12 +74,12 @@ namespace AfterShipTracking
 
             return result;
         }
-        public PutCourierConnectionsByIdResponse PutCourierConnectionsById(string id,  PutCourierConnectionsByIdOptions? options = null)
+        public PutCourierConnectionsByIdResponse PutCourierConnectionsById(string id, PutCourierConnectionsByIdOptions? options = null)
         {
-            string path = $"/tracking/2026-01/courier-connections/{id}";
+            string path = $"/tracking/2026-07/courier-connections/{id}";
             if (string.IsNullOrEmpty(id))
             {
-               throw ErrorCode.GenSDKError(ErrorCode.BAD_REQUEST, "Invalid request"+": `id` is invalid");
+                throw ErrorCode.GenSDKError(ErrorCode.BAD_REQUEST, "Invalid request" + ": `id` is invalid");
             }
             Request request = new Request(
                 HttpMethod.Patch,
@@ -96,12 +96,12 @@ namespace AfterShipTracking
 
             return result;
         }
-        public DeleteCourierConnectionsByIdResponse DeleteCourierConnectionsById(string id,  DeleteCourierConnectionsByIdOptions? options = null)
+        public DeleteCourierConnectionsByIdResponse DeleteCourierConnectionsById(string id, DeleteCourierConnectionsByIdOptions? options = null)
         {
-            string path = $"/tracking/2026-01/courier-connections/{id}";
+            string path = $"/tracking/2026-07/courier-connections/{id}";
             if (string.IsNullOrEmpty(id))
             {
-               throw ErrorCode.GenSDKError(ErrorCode.BAD_REQUEST, "Invalid request"+": `id` is invalid");
+                throw ErrorCode.GenSDKError(ErrorCode.BAD_REQUEST, "Invalid request" + ": `id` is invalid");
             }
             Request request = new Request(
                 HttpMethod.Delete,
